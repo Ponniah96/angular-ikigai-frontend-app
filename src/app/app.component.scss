@@ -1,3 +1,67 @@
-.main{
-  background-color: red;
+.banner{
+    height: 40vh;
+    background-color: #7a2727;
+    color: white;
+    border-bottom-right-radius: 64px;
+}
+
+h1{
+   margin: 0;
+}
+
+.content{
+  display: flex;
+  height: 95vh;
+  margin-top: -35vh;
+  position: relative;
+  z-index: 1;
+}
+
+.sideNavBar{
+  width: 15%;
+  background-color: #e5e9e9;
+  color: #272727;
+  height: 100%;
+  border-top-right-radius: 64px;
+  padding: 50px ;
+}
+
+.sidenavbar-avatarsection{
+  text-align: center;
+}
+
+.matavatarImage{
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+}
+
+.main-content{
+  width: 85%;
+  padding: 16px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.banner-section{  
+  padding: 16px;
+}
+
+.maqruee-section{
+  height: 40vh;
+  width: 70%;
+  margin: auto;
+  background-color: white;
+  border: 1px solid #e5e9e9;
+  border-radius: 4px;
+}
+
+.card-section{
+  height: 40vh;
+  width: 100%;
+  background-color: white;
+  border: 1px solid #e5e9e9;
+  border-radius: 4px;
 }
