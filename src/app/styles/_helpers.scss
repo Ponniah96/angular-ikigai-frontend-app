@@ -1,0 +1,17 @@
+@use "./variables.scss" as *;
+
+.padding{
+  padding: $spacing;
+}
+
+.bg-white{
+  background-color: $color-white;
+  color: $text-color;
+}
+
+.bg-transparent{
+  *{
+
+    color: $text-color-white;
+  }
+}

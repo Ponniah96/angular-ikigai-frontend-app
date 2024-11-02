@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { MatListModule } from '@angular/material/list';
+import { LayoutsComponent } from './presentation/layouts/layouts/layouts.component';
 @Component({
   selector: 'app-root',
   standalone: true,
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
-  imports: [RouterOutlet, MatListModule],
+  imports: [RouterOutlet, LayoutsComponent],
 })
 export class AppComponent {
   title = 'my-app';

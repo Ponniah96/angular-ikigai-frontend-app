@@ -1,0 +1,80 @@
+@use "./variables.scss" as *;
+@use "./mixins.scss" as *;
+
+
+
+// Flexbox Container
+.flex-container{
+  display: flex;
+  gap: $spacing;
+  &.column{
+    @include flex(column,'','','');
+  }
+  &.center{
+    @include flex('','center','center','');
+  }
+  &.end{
+    @include flex('','flex-end','','');
+  }
+  &.space-between{
+    @include flex('','space-between','','');
+  }
+  &.space-around{
+    @include flex('','space-around','','');
+  }
+  &.space-evenly{
+    @include flex('','space-evenly','','');
+  }
+  &.wrap{
+    @include flex('','','','wrap');
+  }
+
+  ///default
+  /// flex-direction: row;
+  /// justify-content: flex-start;
+  /// align-items: stretch;
+  /// flex-wrap: nowrap;
+  /// align-content: stretch;
+}
+
+/// Flexbox Item
+.flex-child{
+  &.grow{
+    @include flex-item(1,'','','');
+  }
+  &.shrink{
+    @include flex-item('',0,'','');
+  }
+  &.basis{
+    @include flex-item('','','auto','');
+  }
+
+  &.align-start{
+    @include flex-item('','','','flex-start');
+  }
+  &.align-end{
+    @include flex-item('','','','flex-end');
+  }
+  &.align-center{
+    @include flex-item('','','','center');
+  }
+  &.baseline{
+    @include flex-item('','','','baseline');
+  }
+  &.stretch{
+    @include flex-item('','','','stretch');
+  }
+  /// default
+  /// flex-grow: 1;
+  /// flex-shrink: 1;
+  /// flex-basis: auto;
+  /// align-self: auto;
+  /// order: 0;
+}
+
+/// Grid Container
+.grid-container{
+  display: grid;
+  row-gap: $spacing;
+  column-gap: $spacing;
+}
