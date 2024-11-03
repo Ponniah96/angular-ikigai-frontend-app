@@ -2,7 +2,7 @@
 
 /// Buttons
 @mixin button($type){
-  font-size: $font-size-base;
+  font-size: $font-size-subText;
   font-weight: $font-weight-base;
   padding: $spacng-button;
   margin-right: $spacing;
@@ -17,8 +17,10 @@
     background-color: $button-secondary-bg;
     color: $button-text-secondary-color;    
   }
-  &:hover{
-    scale: 1.05;
+  @else if $type == disable{
+    border: $border-component;
+    background-color: $button-primary-disabled-bg;
+    color: $text-color-light;    
   }
 }
 

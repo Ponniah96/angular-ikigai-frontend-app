@@ -11,7 +11,20 @@
 
 .bg-transparent{
   *{
-
+    background-color: transparent;
     color: $text-color-white;
   }
+}
+
+.bg-black{
+  background-color: $color-black;
+  color: $text-color-white;
+}
+
+.hide{
+  visibility: hidden;
+}
+
+.show{
+  visibility: visible;
 }
