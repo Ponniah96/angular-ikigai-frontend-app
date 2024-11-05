@@ -16,6 +16,7 @@
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:application",
+          "baseHref": "/angular-ikigai-frontend-app/",
           "options": {
             "outputPath": "docs/browser",
             "index": "src/index.html",
