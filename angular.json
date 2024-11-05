@@ -16,9 +16,9 @@
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:application",
-          "baseHref": "/angular-ikigai-frontend-app/",
           "options": {
             "outputPath": "docs/browser",
+            "baseHref": "/angular-ikigai-frontend-app/",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
