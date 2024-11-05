@@ -35,7 +35,7 @@ export class NavigationAPIService {
   private apiURL = 'https://jsonplaceholder.typicode.com/posts';
   constructor(private http:HttpClient) {}
   getAPIData(): Observable<APIResponse[]> {
-    console.log("API Data",this.http.get<APIResponse[]>(this.apiURL));
+    // console.log("API Data",this.http.get<APIResponse[]>(this.apiURL));
     this.http.get(this.apiURL).subscribe((data) => {
       console.log("API Data",data);
     });

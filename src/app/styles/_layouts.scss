@@ -1,5 +1,6 @@
 @use "./variables.scss" as *;
 @use "./mixins.scss" as *;
+@use "./helpers.scss" as *;
 
 
 
@@ -129,6 +130,89 @@
     }
     .middle--section{
       font-family: $font-family-base-links;
+    }
+  }
+}
+
+/// Dashboard Layout
+/// 
+.section__dashboard{
+  @extend .flex-container,.center,.bg-white,.text-shadow;
+  height: 35vh;
+  width: 80%;
+  margin: auto;
+  border: $border-component;
+  border-radius: $border-radius;
+  &__left, &__right{
+    @extend .flex-child;
+    width: 50%;
+    padding: $spacing;
+  }
+  
+  &__left{
+    height: 100%;
+    img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  
+  &__right{
+    @extend .align-center;
+  }
+  
+  *{
+    font-family: $font-family-base-links;
+  }
+}
+
+
+/// Card Layout
+.section__card{
+  @extend .bg-white;
+  margin: $spacing;
+  border: $border-component;
+  border-radius: $border-radius;
+  &__header{
+    @extend .flex-container,.space-between;
+    width: 100%;
+    padding: $spacing $spacing*2 $spacing*0.5; 
+    border-bottom: $border-component;
+    .left--section,
+    .middle--section,
+    .right--section{
+      margin: 0;
+    }
+  }
+  &__container{
+    @extend .flex-container,.wrap;
+    padding: $spacing $spacing*2;
+    .card{
+      @extend .grid-container;
+      min-width: 300px;
+      min-height: 150px;
+      padding: $spacing;
+      border: $border-component;
+      border-radius: $border-radius;
+      box-shadow: $box-shadow-default;
+      *{
+        padding: 0;
+        margin: 0;
+      }
+      .avatar__container{
+        @extend .flex-container;
+        gap: 0;
+        .avatar{
+          width: 2.25rem;
+          height: 2.25rem;
+          border-radius: 50%;
+          object-fit: cover;
+        }
+        &.collapse .avatar{
+          margin-left: -.62rem;
+        }
+      }
     }
   }
 }

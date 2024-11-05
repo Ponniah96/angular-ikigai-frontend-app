@@ -25,11 +25,14 @@
     margin-top: $spacing * 2.25;
     height: 100vh;
     background-color: white;    
-    padding: $spacing * 3;
+    padding: $spacing * 2;
     position: sticky;
     top: 0;
     overflow: auto;
-    // border-top-right-radius: 64px;
+    border-top-right-radius: 1rem;
+    @media(min-width: 1500px){
+      padding: $spacing * 3;
+    }
   }
   &__main{
     margin-top: $spacing * 2.25;

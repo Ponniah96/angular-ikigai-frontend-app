@@ -5,19 +5,20 @@
     display: flex;
     flex-direction: column;
     gap: $spacing * 1.25;
+    overflow: auto;
 
     .sideNavHeaderSection,
     .sideNavFooterSection{
       text-align: center;
-      img{
+      &__image{
         width: 100%;
         height: auto;
-      }
-      &__image{
         border-radius: 50%;
       }
       &__logoImage{
-        border-radius: none;
+        border-radius: 0;
+        width: 100px;
+        height: auto;
       }
       &__description{
         &__name{
@@ -29,8 +30,10 @@
           margin-bottom: 0.25rem;
           display: block;
           color: $text-color;
-          font-size: $font-size-smallText;
           font-family: $font-family-base-links;
+        }
+        &__role{
+          font-size: $font-size-smallText;
         }
         &__logDetails,
         &__version{
@@ -46,9 +49,7 @@
         color: $text-color-bold;
         margin-bottom: $spacing *0.5;
         font-size: $font-size-base * 1.25;
-        &.links{
-          font-family: $font-family-base-links;
-        }
+        font-family: $font-family-base-links;
       }
       li{
         list-style-type: none;

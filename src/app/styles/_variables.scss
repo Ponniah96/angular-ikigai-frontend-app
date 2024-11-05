@@ -64,12 +64,13 @@ $button-primary-disabled-bg: $color-gray-light;
 
 /// Border
 /// Border Color
-$border-component-color: $color-gray-light;
+$border-component-color: $color-gray;
 /// Border Properties
 $border-button-primary-color: $color-transparent;
 $border-button-secondary-color: $color-blue;
 $border-width: 1px;
-$border-radius: .25rem;
+$border-radius: .5rem;
+$border-button-radius:.25rem;
 
 /// Border Final
 $border-component: $border-width solid $border-component-color;
