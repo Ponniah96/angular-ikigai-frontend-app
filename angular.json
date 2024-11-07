@@ -51,7 +51,8 @@
                   "maximumError": "2mb"
                 }
               ],
-              "outputHashing": "all"
+              "outputHashing": "all",
+              "baseHref": "/angular-ikigai-frontend-app/"
             },
             "development": {
               "optimization": false,
