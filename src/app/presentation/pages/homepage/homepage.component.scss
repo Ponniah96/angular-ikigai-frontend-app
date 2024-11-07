@@ -3,6 +3,8 @@
 @use "../../../styles/typography.scss" as *;
 @use "../../../styles/mixins.scss" as *;
 @use "../../../styles/variables.scss" as *;
+@use "../../../styles/helpers.scss" as *;
+@use "../../../styles/layouts.scss" as *;
 
 .dashboard{
   .section__card{

@@ -38,10 +38,12 @@
   <mat-accordion>
       <mat-expansion-panel>
           <mat-expansion-panel-header>
-              <mat-panel-title class="sideNavSection__subMenu">Documents</mat-panel-title>
+              <mat-panel-title class="sideNavSection__subMenu">Developer Guide</mat-panel-title>
           </mat-expansion-panel-header>
-          <a [routerLink]="['/layout-models']" routerLinkActive="active" role="navigation" class="sideNavSection__subMenu">Layouts</a>
-          <a class="sideNavSection__subMenu">Typography</a>
+          <a [routerLink]="['/prerequisites']" class="sideNavSection__subMenu">Prerequsite</a>
+          <a [routerLink]="['/style-guide']" class="sideNavSection__subMenu">Styles</a>
+          <a [routerLink]="['/architechture-guide']" class="sideNavSection__subMenu">Architechture</a>
+          <a [routerLink]="['/layout-models']" routerLinkActive="active" role="navigation" class="sideNavSection__subMenu">Components</a>
       </mat-expansion-panel>
   </mat-accordion>
 
