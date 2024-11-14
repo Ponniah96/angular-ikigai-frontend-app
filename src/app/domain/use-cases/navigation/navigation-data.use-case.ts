@@ -32,9 +32,18 @@ export class NavigationTeamMenuDataUseCase {
   providedIn: 'root'
 })
 export class NavigationAPIDataUseCase {
+  private apiURL:string="";
   constructor(private navigationAPIService: NavigationAPIService) { }
-  execute(): Observable<APIResponse[]> {
-    console.log("API Data",this.navigationAPIService.getAPIData());
-    return this.navigationAPIService.getAPIData();
+  execute(user:string): Observable<APIResponse[]> {
+    if(user === "superAdmin") {
+      this.apiURL = 'https://jsonplaceholder.typicode.com/posts';
+    }
+    else if(user === "Admin") {
+      this.apiURL = 'https://jsonplaceholder.typicode.com/posts';
+    }
+    else if(user === "User") {
+      this.apiURL = 'https://jsonplaceholder.typicode.com/posts';
+    }
+    return this.navigationAPIService.getAPIData(this.apiURL);
   }
 }

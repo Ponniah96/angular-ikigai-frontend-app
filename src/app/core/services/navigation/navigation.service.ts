@@ -32,13 +32,10 @@ export class NavigationTeamMenuService {
   providedIn: 'root'
 })
 export class NavigationAPIService {
-  private apiURL = 'https://jsonplaceholder.typicode.com/posts';
+  private apiURL:string="";
   constructor(private http:HttpClient) {}
-  getAPIData(): Observable<APIResponse[]> {
-    // console.log("API Data",this.http.get<APIResponse[]>(this.apiURL));
-    this.http.get(this.apiURL).subscribe((data) => {
-      console.log("API Data",data);
-    });
+  getAPIData(apiURL:string): Observable<APIResponse[]> {
+    this.apiURL = apiURL;
     return this.http.get<APIResponse[]>(this.apiURL);
   }
 }

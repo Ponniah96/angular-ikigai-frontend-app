@@ -25,12 +25,16 @@
             ],
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
-            "assets": [
-              
+            "assets": [              
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "src/app/styles/_variables.scss",
+              "src/app/styles/_helpers.scss",
+              "src/app/styles/_layouts.scss",
+              "src/app/styles/_mixins.scss",
+              "src/app/styles/_typography.scss"
             ],
             "scripts": []
           },

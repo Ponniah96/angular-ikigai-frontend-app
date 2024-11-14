@@ -22,7 +22,8 @@ export class SideNavComponent implements OnInit {
   sideNavMenu:NavMenu[] = [];
   sidenavTeamsMenu:NavTeamMenu[] = [];
   apiData: Observable<APIResponse[]>= new Observable<APIResponse[]>();
-
+  response: APIResponse[] = [];
+  user: string = "superAdmin";
   constructor(
     private getNavigationMenuUseCase:NavigationMenuDataUseCase,
     private getNavigationTeamMenuUseCase:NavigationTeamMenuDataUseCase,
@@ -32,8 +33,10 @@ export class SideNavComponent implements OnInit {
   ngOnInit(): void {
     this.sideNavMenu = this.getNavigationMenuUseCase.execute();
     this.sidenavTeamsMenu = this.getNavigationTeamMenuUseCase.execute();
-    this.apiData = this.naviagtionAPI.execute();
-    console.log("API Data",this.apiData);
+    this.naviagtionAPI.execute(this.user).subscribe((data:APIResponse[]) => {
+      this.response = data;
+      console.log("API Response",this.response);
+    })
   }
 
 }
