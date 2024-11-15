@@ -1,7 +1,9 @@
-// @use "./app/styles/variables.scss" as *;
-// @use "./app/styles/mixins.scss" as *;
-// @use "./app/styles/typography.scss" as *;
-// @use "./app/styles/layouts.scss" as *;
+@use "./app/styles/variables.scss" as *;
+@use "./app/styles/mixins.scss" as *;
+@use "./app/styles/typography.scss" as *;
+@use "./app/styles/layouts.scss" as *;
+@use "./app/styles/helpers.scss" as *;
+@use "./app/styles/angularmaterial.scss" as *;
 
 *{
   box-sizing: border-box;

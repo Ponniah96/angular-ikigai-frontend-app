@@ -2,10 +2,10 @@ import { Routes } from '@angular/router';
 import { HomepageComponent } from './presentation/pages/homepage/homepage.component';
 import { IkigaiHomepageComponent } from './presentation/pages/ikigai-homepage/ikigai-homepage.component';
 import { OneToOneConnectHomePageComponent } from './presentation/pages/one-to-one-connect-home-page/one-to-one-connect-home-page.component';
-import { LayoutModelsComponent } from './presentation/pages/layout-models/layout-models.component';
-import { StyleGuideComponent } from './presentation/pages/style-guide/style-guide.component';
-import { PrerequisitesComponent } from './presentation/pages/prerequisites/prerequisites.component';
-import { ArchitechtureGuideComponent } from './presentation/pages/architechture-guide/architechture-guide.component';
+import { PrerequisitesComponent } from './presentation/developerGuide/prerequisites/prerequisites.component';
+import { StyleGuideComponent } from './presentation/developerGuide/style-guide/style-guide.component';
+import { ArchitechtureGuideComponent } from './presentation/developerGuide/architechture-guide/architechture-guide.component';
+import { LayoutModelsComponent } from './presentation/developerGuide/layout-models/layout-models.component';
 
 export const routes: Routes = [
   {path:'IGSchedule', component:IkigaiHomepageComponent},

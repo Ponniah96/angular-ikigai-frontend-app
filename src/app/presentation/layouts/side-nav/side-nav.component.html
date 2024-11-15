@@ -9,7 +9,7 @@
     </figcaption>
   </figure>
 
-  <section class="sideNavSection" *ngFor="let menu of sideNavMenu">
+  <section class="sideNavSection" *ngFor="let menu of sideNavMenus.menuList">
       <a *ngIf="menu.navigationPath" [routerLink]="['/', menu.navigationPath]" routerLinkActive="active" role="navigation" class="sideNavSection__mainMenu text-shadow">{{ menu.menuName }}</a>
       <h3 *ngIf="!menu.navigationPath" class="sideNavSection__mainMenu">{{ menu.menuName }}</h3>
       <ul>
@@ -24,7 +24,7 @@
         <mat-expansion-panel-header>
             <mat-panel-title class="sideNavSection__mainMenu">Teams</mat-panel-title>
         </mat-expansion-panel-header>
-       <mat-accordion *ngFor="let teams of sidenavTeamsMenu; let i = index">
+       <mat-accordion *ngFor="let teams of sidenavTeamsMenus; let i = index">
           <mat-expansion-panel [expanded]="i === 0">
             <mat-expansion-panel-header>
               <mat-panel-title>{{teams.teamName}}</mat-panel-title>

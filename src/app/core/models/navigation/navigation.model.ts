@@ -12,6 +12,12 @@ export interface NavMenu {
   subMenus: NavSubMenus []
 }
 
+export interface NavMenuResponse {
+  isValid:boolean,
+  remarks:string,
+  menuList:NavMenu[]
+}
+
 export interface NavTeamLinks {
   linkId:number,
   linkName:string,
@@ -30,9 +36,6 @@ export interface APIResponse {
   title:string,
   body:string
 }
-
-
-
 
 const teamsInidividualPageResponse={
   "teamList": [
