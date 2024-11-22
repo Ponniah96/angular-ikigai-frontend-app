@@ -90,6 +90,9 @@
 ///Header layout
 .section__header{
   height: 20%;
+  position: sticky;
+  top: 0;
+  z-index: 1;
   h1,h6{
     padding: 0 $spacing ;
   }
@@ -137,7 +140,7 @@
 /// Dashboard Layout
 /// 
 .section__dashboard{
-  @extend .flex-container,.center,.bg-white,.text-shadow;
+  @extend .flex-container,.center,.bg-white;
   height: 35vh;
   width: 80%;
   margin: auto;

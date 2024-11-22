@@ -8,7 +8,7 @@ import {MatExpansionModule} from '@angular/material/expansion';
   styleUrl: './layout-models.component.scss'
 })
 export class LayoutModelsComponent {
-  headerHTML=`<header class="section__header bg-transparent">
+  headerHTML=`<header class="section__header bg-red">
     <!--Title-->
     <h1>Codename Pulse</h1>
     <!--SubTitle-->

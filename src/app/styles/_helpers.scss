@@ -23,6 +23,16 @@
     color: $text-color-white;
   }
 }
+.bg-red{
+  background-color: $color-red-dark;
+  *{
+    color: $text-color-white;    
+  }
+  .bg-black{
+    background-color: $color-black;
+    color: $text-color-white;
+  }
+}
 
 .bg-black{
   background-color: $color-black;
@@ -39,4 +49,8 @@
 
 .text-shadow{
   text-shadow: 0px 6px 4px $color-gray-dark;
+}
+
+.success{
+  color: $color-success;
 }

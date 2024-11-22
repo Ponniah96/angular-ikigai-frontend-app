@@ -32,7 +32,6 @@ export class SideNavComponent implements OnInit {
     })
     this.sideNavMenus = this.getNavigationMenuAPIService.execute();
     this.sidenavTeamsMenus = this.getNavigationTeamsMenuAPIService.execute();
-    console.log("SideNavTeamsMenus",this.sidenavTeamsMenus);
   }
 
 }
