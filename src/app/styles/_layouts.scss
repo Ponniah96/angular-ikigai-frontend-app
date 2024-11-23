@@ -90,6 +90,7 @@
 ///Header layout
 .section__header{
   height: 20%;
+  padding-top: $spacing * 2.25;
   position: sticky;
   top: 0;
   z-index: 1;
