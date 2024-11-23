@@ -8,6 +8,14 @@
   padding-top: $spacing;
 }
 
+.margin-top{
+  margin-top: $spacing;
+}
+
+.margin-bottom{
+  margin-bottom: $spacing;
+}
+
 .bg-white{
   background-color: $color-white;
   color: $text-color;
@@ -23,10 +31,14 @@
     color: $text-color-white;
   }
 }
+
 .bg-red{
   background-color: $color-red-dark;
   *{
     color: $text-color-white;    
+  }
+  button.disabled{
+    color: $color-gray-dark;
   }
   .bg-black{
     background-color: $color-black;

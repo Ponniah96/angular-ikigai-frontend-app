@@ -37,14 +37,39 @@
 
   <mat-accordion>
       <mat-expansion-panel>
-          <mat-expansion-panel-header>
-              <mat-panel-title class="sideNavSection__subMenu">Developer Guide</mat-panel-title>
+          <mat-expansion-panel-header class="margin-bottom">
+              <mat-panel-title class="sideNavSection__mainMenu">Developer Guide</mat-panel-title>
           </mat-expansion-panel-header>
-          <a href="https://github.com/Ponniah96/angular-ikigai-frontend-app.git" target="_blank" class="sideNavSection__subMenu">Codebase</a>
-          <a [routerLink]="['/prerequisites']" class="sideNavSection__subMenu">Prerequsite</a>
-          <a [routerLink]="['/style-guide']" class="sideNavSection__subMenu">Styles</a>
-          <a [routerLink]="['/architechture-guide']" class="sideNavSection__subMenu">Architechture</a>
-          <a [routerLink]="['/layout-models']" routerLinkActive="active" role="navigation" class="sideNavSection__subMenu">Components</a>
+          <mat-accordion>
+            <mat-expansion-panel>
+              <mat-expansion-panel-header>
+                <mat-panel-title>AI</mat-panel-title>
+              </mat-expansion-panel-header>
+              <a href="https://github.com/Ponniah96/angular-ikigai-frontend-app.git" target="_blank" class="sideNavSection__subMenu">Codebase</a>
+              <a [routerLink]="['/AI-basics']" class="sideNavSection__subMenu">Basics</a>
+            </mat-expansion-panel>
+          </mat-accordion>
+          <mat-accordion>
+            <mat-expansion-panel>
+              <mat-expansion-panel-header>
+                <mat-panel-title>Front End</mat-panel-title>
+              </mat-expansion-panel-header>
+              <a href="https://github.com/Codename-Pulse/engageiq_fe" target="_blank" class="sideNavSection__subMenu">Codebase</a>
+              <a [routerLink]="['/prerequisites']" class="sideNavSection__subMenu">Prerequsite</a>
+              <a [routerLink]="['/style-guide']" class="sideNavSection__subMenu">Styles</a>
+              <a [routerLink]="['/architechture-guide']" class="sideNavSection__subMenu">Architechture</a>
+              <a [routerLink]="['/layout-models']" routerLinkActive="active" role="navigation" class="sideNavSection__subMenu">Components</a>
+            </mat-expansion-panel>
+          </mat-accordion>
+          <mat-accordion>
+            <mat-expansion-panel>
+              <mat-expansion-panel-header>
+                <mat-panel-title>Back End</mat-panel-title>
+              </mat-expansion-panel-header>
+              <a href="https://github.com/Codename-Pulse/engageiq_be" target="_blank" class="sideNavSection__subMenu">Codebase</a>
+              <a [routerLink]="['/back-end-basics']" class="sideNavSection__subMenu">Basics</a>
+            </mat-expansion-panel>
+          </mat-accordion>
       </mat-expansion-panel>
   </mat-accordion>
 
