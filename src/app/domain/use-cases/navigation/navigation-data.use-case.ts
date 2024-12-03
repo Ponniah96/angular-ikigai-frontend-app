@@ -1,10 +1,10 @@
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
 import { NavMenuDataResponse } from "../../../data/responses/navigation/nav-data.response";
-import { NavInidividualTeamResponse } from "../../../data/responses/navigation/nav-data.response";
+import { NavIndividualTeamsResponse } from "../../../data/responses/navigation/nav-data.response";
 import { NavMenuResponse } from "../../../core/models/navigation/navigation.model";
-import { NavTeamMenu } from "../../../core/models/navigation/navigation.model";
 import { APIResponse } from "../../../core/models/navigation/navigation.model";
+import { NavTeamResponse } from "../../../core/models/navigation/navigation.model";
 import { ApiService } from "../../../core/services/api.service";
 
 @Injectable({
@@ -30,9 +30,9 @@ export class getNavigationMenuAPIService{
 @Injectable({
   providedIn: 'root'
 })
-export class getNavigationTeamsMenuAPIService{
-  execute():NavTeamMenu[]{
-    return NavInidividualTeamResponse.teamList;
+export class getNavigationTeamLinksAPIService{
+  execute():NavTeamResponse{
+    return NavIndividualTeamsResponse;
   }
 }
 

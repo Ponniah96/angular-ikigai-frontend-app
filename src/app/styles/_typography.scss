@@ -62,6 +62,19 @@ button{
   }
 }
 
+mat-icon{
+  cursor: pointer;
+  &.disabled{
+    color: $color-gray-dark;
+  }
+  &.success{
+    color: $color-success;
+  }
+  &.warning{
+    color: $color-orange;
+  }
+}
+
 .card-section{
   padding: $spacing;
   .card{

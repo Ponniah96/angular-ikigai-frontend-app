@@ -131,6 +131,18 @@
         margin: 0;
         font-size: $font-size-smallText;
       }
+      mat-icon{
+        font-size: $font-size-base;
+        &.disabled{
+          color: $color-gray-dark;
+        }
+        &.success{
+          color: $color-success;
+        }
+        &.warning{
+          color: $color-orange;
+        }
+      }
     }
     .middle--section{
       font-family: $font-family-base-links;

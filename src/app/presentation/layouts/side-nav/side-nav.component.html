@@ -24,18 +24,18 @@
         <mat-expansion-panel-header>
             <mat-panel-title class="sideNavSection__mainMenu">Teams</mat-panel-title>
         </mat-expansion-panel-header>
-       <mat-accordion *ngFor="let teams of sidenavTeamsMenus; let i = index">
+       <mat-accordion *ngFor="let teams of sidenavTeamsLinks.teams; let i = index">
           <mat-expansion-panel [expanded]="i === 0">
             <mat-expansion-panel-header>
               <mat-panel-title>{{teams.teamName}}</mat-panel-title>
             </mat-expansion-panel-header>
-            <a *ngFor="let team of teams.teamLinks" class="sideNavSection__subMenu connect__links" [routerLink]="['/', team.linkPath]" routerLinkActive="active">{{team.linkName}}</a>
+            <a *ngFor="let team of teams.subMenus" class="sideNavSection__subMenu connect__links" [routerLink]="['/', team.navigationPath]" routerLinkActive="active" id={{teams.teamID}}>{{team.subMenuName}}</a>
           </mat-expansion-panel>
         </mat-accordion>
     </mat-expansion-panel>
   </mat-accordion>
 
-  <mat-accordion>
+  <mat-accordion class="flex-child grow">
       <mat-expansion-panel>
           <mat-expansion-panel-header class="margin-bottom">
               <mat-panel-title class="sideNavSection__mainMenu">Developer Guide</mat-panel-title>

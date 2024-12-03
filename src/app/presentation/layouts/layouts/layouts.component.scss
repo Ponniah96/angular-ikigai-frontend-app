@@ -18,20 +18,20 @@
     background: linear-gradient(to bottom,$color-red-dark 0,$color-red-dark 230px,$color-gray-light 230px,$color-gray-light 100%);
   }
   @extend .grid-container;
-  @include grid-template-column(15% 1fr );
+  @include grid-template-column(17% 1fr );
   @include grid-template-row(1fr);
   gap: 0;
   &__sideNavBar{
     margin-top: $spacing * 2.25;
-    height: 100vh;
-    background-color: white;    
-    padding: $spacing * 2;
-    position: sticky;
-    top: 0;
-    overflow: auto;
+    // height: 100vh;
+    // background-color: white;    
+    // padding: $spacing * 2;
+    // position: sticky;
+    // top: 0;
+    // overflow: auto;
     border-top-right-radius: 1rem;
     @media(min-width: 1500px){
-      padding: $spacing * 3;
+      // padding: $spacing * 3;
     }
   }
   &__main{

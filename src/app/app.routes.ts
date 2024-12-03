@@ -1,7 +1,8 @@
 import { Routes } from '@angular/router';
 import { HomepageComponent } from './presentation/pages/homepage/homepage.component';
-import { IkigaiHomepageComponent } from './presentation/pages/ikigai-homepage/ikigai-homepage.component';
-import { OneToOneConnectHomePageComponent } from './presentation/pages/one-to-one-connect-home-page/one-to-one-connect-home-page.component';
+import { IkigaiHomepageComponent } from './presentation/pages/ikigai/ikigai-homepage/ikigai-homepage.component';
+import { IkigaiTeamsComponent } from './presentation/pages/ikigai/ikigai-teams/ikigai-teams.component';
+import { OneToOneConnectHomePageComponent } from './presentation/pages/1:1:Connect/one-to-one-connect-home-page/one-to-one-connect-home-page.component';
 import { PrerequisitesComponent } from './presentation/developerGuide/front-end/prerequisites/prerequisites.component';
 import { StyleGuideComponent } from './presentation/developerGuide/front-end/style-guide/style-guide.component';
 import { ArchitechtureGuideComponent } from './presentation/developerGuide/front-end/architechture-guide/architechture-guide.component';
@@ -14,6 +15,7 @@ import { BackEndBasicsComponent } from './presentation/developerGuide/Backend/ba
 export const routes: Routes = [
   {path:'IGSchedule', component:WorkinProgreessComponent},
   {path:'IKIGAI', component:IkigaiHomepageComponent},
+  {path:'IKIGAI-Teams', component:IkigaiTeamsComponent},
   {path:'IGCustomize', component:WorkinProgreessComponent},
   {path:'OOSchedule', component:WorkinProgreessComponent},
   {path:'OneToOne', component:WorkinProgreessComponent},

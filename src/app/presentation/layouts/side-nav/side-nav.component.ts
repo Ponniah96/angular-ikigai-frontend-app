@@ -4,11 +4,11 @@ import { CommonModule } from '@angular/common';
 import { MatListModule } from '@angular/material/list';
 import {MatExpansionModule} from '@angular/material/expansion';
 import { NavMenuResponse } from '../../../core/models/navigation/navigation.model';
-import { NavTeamMenu } from '../../../core/models/navigation/navigation.model';
+import { NavTeamResponse } from '../../../core/models/navigation/navigation.model';
 import { APIResponse } from '../../../core/models/navigation/navigation.model';
 import { getAPIService } from '../../../domain/use-cases/navigation/navigation-data.use-case';
 import { getNavigationMenuAPIService } from '../../../domain/use-cases/navigation/navigation-data.use-case';
-import { getNavigationTeamsMenuAPIService } from '../../../domain/use-cases/navigation/navigation-data.use-case';
+import { getNavigationTeamLinksAPIService } from '../../../domain/use-cases/navigation/navigation-data.use-case';
 
 @Component({
   selector: 'app-side-nav',
@@ -19,11 +19,11 @@ import { getNavigationTeamsMenuAPIService } from '../../../domain/use-cases/navi
 })
 export class SideNavComponent implements OnInit {
   sideNavMenus: NavMenuResponse = {} as NavMenuResponse;
-  sidenavTeamsMenus:NavTeamMenu[] = [];
+  sidenavTeamsLinks:NavTeamResponse = {} as NavTeamResponse;
   constructor(
     private getAPIService:getAPIService,
     private getNavigationMenuAPIService:getNavigationMenuAPIService,
-    private getNavigationTeamsMenuAPIService:getNavigationTeamsMenuAPIService
+    private getNavigationTeamLinksAPIService:getNavigationTeamLinksAPIService
   ){ }
 
   ngOnInit(): void {
@@ -31,7 +31,7 @@ export class SideNavComponent implements OnInit {
       console.log("API Response",data);
     })
     this.sideNavMenus = this.getNavigationMenuAPIService.execute();
-    this.sidenavTeamsMenus = this.getNavigationTeamsMenuAPIService.execute();
+    this.sidenavTeamsLinks = this.getNavigationTeamLinksAPIService.execute();
   }
 
 }

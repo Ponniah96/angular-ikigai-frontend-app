@@ -61,55 +61,65 @@ export const NavMenuDataResponse = {
   "remarks": "Success"
 }
 
-export const NavInidividualTeamResponse={
-  "teamList": [
+
+
+export const NavIndividualTeamsResponse={
+  "teams": [
     {
-      "teamID": 1,
-      "teamName": "Kalopsia",
-      "teamLinks": [
+      "teamID": "E0CEE64F-3106-480F-9875-22C4A573D9FA",
+      "teamName": "Exact Rangers",
+      "subMenus": [
         {
-          "linkId": 1,
-          "linkName": "IKIGAI",
-          "linkPath": "IKIGAI"
+          "subMenuId": 5,
+          "subMenuName": "IKIGAI",
+          "navigationPath": "IKIGAI-Teams",
+          "mainMenuId": 2
         },
         {
-          "linkId": 2,
-          "linkName": "1:1 Connect",
-          "linkPath": "OneToOne"
+          "subMenuId": 8,
+          "subMenuName": "OneToOne",
+          "navigationPath": "OneToOne",
+          "mainMenuId": 3
         }
       ]
     },
     {
-      "teamID": 2,
-      "teamName": "Mavericks",
-      "teamLinks": [
+      "teamID": "6765745B-BBEB-48FC-800F-27925B259EB0",
+      "teamName": "Exact Kalopsia",
+      "subMenus": [
         {
-          "linkId": 1,
-          "linkName": "IKIGAI",
-          "linkPath": "IKIGAI"
+          "subMenuId": 5,
+          "subMenuName": "IKIGAI",
+          "navigationPath": "IKIGAI-Teams",
+          "mainMenuId": 2
         },
         {
-          "linkId": 2,
-          "linkName": "1:1 Connect",
-          "linkPath": "OneToOne"
+          "subMenuId": 8,
+          "subMenuName": "OneToOne",
+          "navigationPath": "OneToOne",
+          "mainMenuId": 3
         }
       ]
     },
     {
-      "teamID": 3,
-      "teamName": "Stellar",
-      "teamLinks": [
+      "teamID": "2BF81296-9F66-4C46-BD78-EE389972A040",
+      "teamName": "Coca Cola",
+      "subMenus": [
         {
-          "linkId": 1,
-          "linkName": "IKIGAI",
-          "linkPath": "IKIGAI"
+          "subMenuId": 5,
+          "subMenuName": "IKIGAI",
+          "navigationPath": "IKIGAI-Teams",
+          "mainMenuId": 2
         },
         {
-          "linkId": 2,
-          "linkName": "1:1 Connect",
-          "linkPath": "OneToOne"
+          "subMenuId": 8,
+          "subMenuName": "OneToOne",
+          "navigationPath": "OneToOne",
+          "mainMenuId": 3
         }
       ]
     }
   ],
+  "isValid": true,
+  "remarks": "Success"
 }
