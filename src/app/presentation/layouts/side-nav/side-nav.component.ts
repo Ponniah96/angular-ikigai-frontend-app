@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { RouterModule, Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { MatListModule } from '@angular/material/list';
 import {MatExpansionModule} from '@angular/material/expansion';
@@ -21,6 +21,7 @@ export class SideNavComponent implements OnInit {
   sideNavMenus: NavMenuResponse = {} as NavMenuResponse;
   sidenavTeamsLinks:NavTeamResponse = {} as NavTeamResponse;
   constructor(
+    private router:Router,
     private getAPIService:getAPIService,
     private getNavigationMenuAPIService:getNavigationMenuAPIService,
     private getNavigationTeamLinksAPIService:getNavigationTeamLinksAPIService
@@ -32,6 +33,12 @@ export class SideNavComponent implements OnInit {
     })
     this.sideNavMenus = this.getNavigationMenuAPIService.execute();
     this.sidenavTeamsLinks = this.getNavigationTeamLinksAPIService.execute();
+  }
+
+  logoutFunction = () => {
+    console.log('Logging out');
+    localStorage.removeItem('isLoggedIn');
+    this.router.navigate(['/login']);
   }
 
 }
