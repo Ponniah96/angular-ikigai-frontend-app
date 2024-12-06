@@ -4,16 +4,9 @@
 @use "../../../styles/helpers.scss" as *;
 @use "../../../styles/layouts.scss" as *;
 
-
-// ::ng-deep.login-component,.login{
-//   width: inherit;
-//   height: 100%;
-// }
 .login{
   @extend .flex-container;
   box-shadow: $box-shadow-medium;
-  // min-width: 500px;
-  // min-height: 300px;
   gap: 0;
   .login-marquee-image,
   .login-content{

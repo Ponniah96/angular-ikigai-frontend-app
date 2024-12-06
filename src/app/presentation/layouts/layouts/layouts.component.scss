@@ -28,8 +28,11 @@
     // background: radial-gradient(circle at 50% 50%, #2d2f49, #1b1c2a 40%, #0f1121 80%);
   }
   &__sideNavBar{
-    margin-top: $spacing * 2.25;
-    border-top-right-radius: 1rem;
+    padding-top: $spacing * 2.25;
+    height: calc(100vh );
+    position: sticky;
+    top: 0px;
+    overflow: auto;    
     @media(min-width: 1500px){
     }
   }

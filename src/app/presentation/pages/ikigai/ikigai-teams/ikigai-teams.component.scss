@@ -6,7 +6,7 @@
 
 .ikigai-teams{
   .section__members{
-    @extend .flex-container,.wrap,.space-evenly;
+    @extend .flex-container,.wrap,.center;
     margin: $spacing;
     &__description{
       @extend .flex-container,.center, .column;
@@ -17,6 +17,8 @@
       background-color: #c3e9cc;
       border: 1px solid #28a745;
       border-radius: 4px;
+      cursor: pointer;
+
       &.active{
         background-color: #bfe1f3;
         border: 1px solid #007bff;
@@ -30,10 +32,11 @@
     }
   }
   .section__ikigai{
-    @extend .grid-container, .bg-white;
-    @include grid-template-column(1fr 2fr);
-    @include grid-template-row(1fr 1fr 1fr);
-    @include grid-row-gap(0);
+    // @extend .grid-container, .bg-white;
+    // @include grid-template-column(1fr 2fr);
+    // @include grid-template-row(1fr 1fr 1fr);
+    // @include grid-row-gap(0);
+    @extend .flex-container, .column, .bg-white;
     margin: $spacing;
     .section__card__header{
       background-color: $color-gray-lighter;
@@ -41,45 +44,46 @@
     }
     .card{
       box-shadow: none;
-      min-height: max-content;
+      width: 100%;
+      height: auto;
     }    
-    .extend-row{
-      @include grid-row(2,4);
-      @include grid-column(2,3);
-      .must-have {
-        color: white;
-        background-color: #e57373;
-        padding: 4px 8px;
-        border-radius: 4px;
-      }
+    // .extend-row{
+    //   @include grid-row(2,4);
+    //   @include grid-column(2,3);
+    //   .must-have {
+    //     color: white;
+    //     background-color: #e57373;
+    //     padding: 4px 8px;
+    //     border-radius: 4px;
+    //   }
       
-      .good-have {
-        color: white;
-        background-color: #ffb74d;
-        padding: 4px 8px;
-        border-radius: 4px;
-      }
+    //   .good-have {
+    //     color: white;
+    //     background-color: #ffb74d;
+    //     padding: 4px 8px;
+    //     border-radius: 4px;
+    //   }
       
-      .status-new {
-        background-color: #ffeb3b;
-        color: black;
-      }
+    //   .status-new {
+    //     background-color: #ffeb3b;
+    //     color: black;
+    //   }
       
-      .status-good {
-        background-color: #4caf50;
-        color: white;
-      }
+    //   .status-good {
+    //     background-color: #4caf50;
+    //     color: white;
+    //   }
       
-      .status-satisfactory {
-        background-color: #81c784;
-        color: white;
-      }
+    //   .status-satisfactory {
+    //     background-color: #81c784;
+    //     color: white;
+    //   }
       
-      .status-unsatisfactory {
-        background-color: #f44336;
-        color: white;
-      }
-    }
+    //   .status-unsatisfactory {
+    //     background-color: #f44336;
+    //     color: white;
+    //   }
+    // }
   }
   
 }

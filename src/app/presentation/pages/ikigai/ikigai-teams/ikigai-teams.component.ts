@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { LoaderComponent } from '../../../components/loader/loader.component';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTableModule } from '@angular/material/table';
 import { MatChipsModule } from '@angular/material/chips';
@@ -7,11 +9,12 @@ import { MatSelect } from '@angular/material/select';
 import { MatOption } from '@angular/material/select';
 import { ikigaiIndividualResponse } from '../../../../core/models/ikigai-individual/ikigaiIndividual.model';
 import { ikigaiIndividualTeamsResponse } from '../../../../core/models/ikigai-individual/ikigaiIndividual.model';
+import { ikigaiIndividualTeamMembersResponse } from '../../../../core/models/ikigai-individual/ikigaiIndividual.model';
 import { getIkigaiIndividualDataService } from '../../../../domain/use-cases/ikigai-individual/ikigaiIndividual-data.use-case';
 @Component({
   selector: 'app-ikigai-teams',
   standalone: true,
-  imports: [ MatIconModule, MatChipsModule, MatTableModule, MatSelect, MatOption, CommonModule ],
+  imports: [ MatIconModule, MatChipsModule, MatTableModule, MatSelect, MatOption, CommonModule, LoaderComponent ],
   templateUrl: './ikigai-teams.component.html',
   styleUrl: './ikigai-teams.component.scss'
 })
@@ -43,19 +46,33 @@ dataSource = [
 ];
 actionOptions = ['Select', 'Option 1', 'Option 2'];
 
+  loader:boolean = false;
+  userId: string='';
+  employeeID: string = '';
   headerEdit: boolean = false;
   goingGoodDisabled: boolean = true;
   KeyImprovementsDisabled: boolean = true;
   ikigaiTeamData: ikigaiIndividualResponse = {} as ikigaiIndividualResponse;
   ikigaiIndividualTeams: ikigaiIndividualTeamsResponse = {} as ikigaiIndividualTeamsResponse;
+  ikiagiIndividualTeamMembers: ikigaiIndividualTeamMembersResponse = {} as ikigaiIndividualTeamMembersResponse;
+  goingGoodFeedback: string[] = [];
+  improvementsFeedback: string[] = [];
 
-  constructor(private getIkigaiIndividualDataService: getIkigaiIndividualDataService) {}
+  constructor(private getIkigaiIndividualDataService: getIkigaiIndividualDataService,private route: ActivatedRoute) {}
 
   ngOnInit(): void {
+    this.userId = this.route.snapshot.paramMap.get('id')!;
     this.ikigaiTeamData = this.getIkigaiIndividualDataService.execute();
-    console.log("IKIGAI Team Data",this.ikigaiTeamData);
-    this.ikigaiIndividualTeams = this.ikigaiTeamData.teams[1];
-    console.log("IKIGAI Individual Teams",this.ikigaiIndividualTeams);
+    this.ikigaiIndividualTeams = this.ikigaiTeamData.teams.find((team) => team.teamID.toLowerCase() === this.userId.toLowerCase())!;
+    this.ikiagiIndividualTeamMembers = this.ikigaiIndividualTeams.teamMembersList[0];
+    this.goingGoodFeedback = this.ikiagiIndividualTeamMembers.ikigaiData.goingGood.map((feedback) => feedback.feedback);
+    this.improvementsFeedback = this.ikiagiIndividualTeamMembers.ikigaiData.needImprovement.map((feedback) => feedback.feedback);
+    this.loader = true;
+    setTimeout(() => {
+      this.loader = false;
+      document.getElementById("going-good")!.innerHTML = this.goingGoodFeedback.join('\n');
+      document.getElementById("key-improvements")!.innerHTML = this.improvementsFeedback.join('\n');
+    }, 3000);
   }
 
   handleGoingGood() {
@@ -66,6 +83,19 @@ actionOptions = ['Select', 'Option 1', 'Option 2'];
   handleKeyImprovements() {
     this.headerEdit = !this.headerEdit;
     this.KeyImprovementsDisabled = !this.KeyImprovementsDisabled;
+  }
+
+  getTeamMembersEmployeeID(empID: string) {
+    this.employeeID = empID;
+    this.ikiagiIndividualTeamMembers = this.ikigaiIndividualTeams.teamMembersList.find((emp) => emp.empID.toLowerCase() === this.employeeID.toLowerCase())!;
+    this.goingGoodFeedback = this.ikiagiIndividualTeamMembers.ikigaiData.goingGood.map((feedback) => feedback.feedback);
+    this.improvementsFeedback = this.ikiagiIndividualTeamMembers.ikigaiData.needImprovement.map((feedback) => feedback.feedback);
+    document.getElementById("going-good")!.innerHTML = this.goingGoodFeedback.join('\n');
+    document.getElementById("key-improvements")!.innerHTML = this.improvementsFeedback.join('\n');
+    this.loader = true;
+    setTimeout(() => {
+      this.loader = false;
+    }, 1000);
   }
 
 }

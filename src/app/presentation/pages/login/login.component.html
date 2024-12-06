@@ -8,3 +8,10 @@
   </section>
 </section>
 
+@if(this.showSnackbar){
+ <app-snackbar SnackBarMessage={{snackbarMessge}} SnackBarType={{snackbarType}} (closeSnackBar)="CloseSnackBar()" ></app-snackbar>
+}
+
+@if(this.loader){
+  <app-loader></app-loader>
+}

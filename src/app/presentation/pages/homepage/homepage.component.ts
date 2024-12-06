@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LoaderComponent } from '../../components/loader/loader.component';
 import { CommonModule } from '@angular/common';
 import {MatButtonModule} from '@angular/material/button';
 import { HomepageDataResponse } from '../../../data/responses/hompage/homepage-data.response';
@@ -8,14 +9,19 @@ import { getHomePageDataService } from '../../../domain/use-cases/homepage/homep
 @Component({
   selector: 'app-homepage',
   standalone: true,
-  imports: [MatButtonModule, CommonModule],
+  imports: [MatButtonModule, CommonModule, LoaderComponent],
   templateUrl: './homepage.component.html',
   styleUrl: './homepage.component.scss'
 })
 export class HomepageComponent {
+  loader: boolean = false;
   homepageData: HomePageResponse = {} as HomePageResponse;
   constructor(private getHomePageDataService: getHomePageDataService) { }
   ngOnInit(): void {
     this.homepageData = this.getHomePageDataService.execute();
+    this.loader = true;
+    setTimeout(() => {
+      this.loader = false;
+    }, 3000);
   }
 }

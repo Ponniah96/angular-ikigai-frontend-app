@@ -43,7 +43,7 @@
       <p>Ponniah</p>
     </section> -->
     <ng-container *ngFor="let teamMembers of ikigaiIndividualTeams.teamMembersList">
-      <section class="section__members__description">
+      <section class="section__members__description" (click)="getTeamMembersEmployeeID(teamMembers.empID)">
         <img class="avatar" src="assets/Avatars/M/Gemini_Generated_Image_mo6jucmo6jucmo6j.jpeg" alt="Male">
         <p>{{teamMembers.empName}}</p>
       </section>
@@ -59,7 +59,19 @@
       </section>
       <!--Card Section-->
       <section class="section__card__container">
-        <textarea name="" id="" class="card" [disabled]="goingGoodDisabled" value={{goingGood}}></textarea>
+        <textarea name="" id="going-good" class="card" [disabled]="goingGoodDisabled"></textarea>
+      </section>
+    </section>
+    <section class="section__card ">
+      <!--Card Header-->
+      <section class="section__card__header">
+        <mat-icon [ngClass]="KeyImprovementsDisabled?'left--section disabled':'left--section warning'">info</mat-icon>
+        <h6 [ngClass]="KeyImprovementsDisabled?'middle--section disabled':'middle--section'">Key Improvement Areas</h6>
+        <mat-icon [ngClass]="KeyImprovementsDisabled?'right--section disabled':'right--section success'" (click)="handleKeyImprovements()">edit</mat-icon>
+      </section>
+      <!--Card Section-->
+      <section class="section__card__container">
+        <textarea name="" id="key-improvements" class="card" [disabled]="KeyImprovementsDisabled"></textarea>
       </section>
     </section>
     <section class="section__card">
@@ -72,30 +84,6 @@
       <!--Card Section-->
       <section class="section__card__container">
         <!-- <textarea name="" id="" class="card"></textarea> -->
-      </section>
-    </section>
-    <section class="section__card ">
-      <!--Card Header-->
-      <section class="section__card__header">
-        <mat-icon [ngClass]="KeyImprovementsDisabled?'left--section disabled':'left--section warning'">info</mat-icon>
-        <h6 [ngClass]="KeyImprovementsDisabled?'middle--section disabled':'middle--section'">Key Improvement Areas: Should-Have</h6>
-        <mat-icon [ngClass]="KeyImprovementsDisabled?'right--section disabled':'right--section success'" (click)="handleKeyImprovements()">edit</mat-icon>
-      </section>
-      <!--Card Section-->
-      <section class="section__card__container">
-        <textarea name="" id="" class="card" [disabled]="KeyImprovementsDisabled" value={{KeyImprovementsMustHave}}></textarea>
-      </section>
-    </section>
-    <section class="section__card ">
-      <!--Card Header-->
-      <section class="section__card__header">
-        <mat-icon class="left--section primary disabled">info</mat-icon>
-        <h6 class="middle--section disabled">Key Improvements Areas: Good-Have</h6>
-        <mat-icon class="right--section primary disabled">edit</mat-icon>
-      </section>
-      <!--Card Section-->
-      <section class="section__card__container">
-        <textarea name="" id="" class="card" disabled value={{KeyImprovementsGoodToHave}}></textarea>
       </section>
     </section>
     <section class="section__card extend-row smart-">
@@ -164,3 +152,7 @@
     </section>
   </section>
 </section>
+
+@if(this.loader){
+  <app-loader></app-loader>
+}

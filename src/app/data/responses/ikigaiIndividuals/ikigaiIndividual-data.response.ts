@@ -17,15 +17,38 @@ export const IkigaiIndividualDataResponse = {
           "empDesignation": " Senior Developer",
           "empOneToOneStatus": "P",
           "ikigaiData":{
-            "goingGood": 
-`1. Handling PR Reviews, giving good feedbacks and communication with other team members.
-2. Helping peers on queries, pairing with them.
-3. Scaling up good in terms of Tech lead role; e.g taking care of tasks, assigning to relevant members, proper follow up and helping them with solutions`,
-            "needImprovement": 
-`1. Identyfing Global Impact based on changes and validate/share necessary info with Team members/QA.
-2. Delegating task to team members, helping them to scale.
-3. Plan and Complete certifications.
-4. Complete Key Results for all the Objectives within the quarter.`,
+            "goingGood":[
+              {
+                "id": 1,
+                "feedback": "Kumar Ram Handling PR Reviews, giving good feedbacks and communication with other team members."
+              },
+              {
+                "id": 2,
+                "feedback": "Helping peers on queries, pairing with them."
+              },
+              {
+                "id": 3,
+                "feedback": "Scaling up good in terms of Tech lead role; e.g taking care of tasks, assigning to relevant members, proper follow up and helping them with solutions"
+              }
+            ] ,
+            "needImprovement": [
+              {
+                "id": 1,
+                "feedback": "Kumar Ram Identyfing Global Impact based on changes and validate/share necessary info with Team members/QA."
+              },
+              {
+                "id": 2,
+                "feedback": "Delegating task to team members, helping them to scale."
+              },
+              {
+                "id": 3,
+                "feedback": "Plan and Complete certifications."
+              },
+              {
+                "id": 4,
+                "feedback": "Complete Key Results for all the Objectives within the quarter."
+              }
+            ]
           }
         },
         {
@@ -35,15 +58,38 @@ export const IkigaiIndividualDataResponse = {
           "empDesignation": "Scrum Master",
           "empOneToOneStatus": "P",
           "ikigaiData":{
-            "goingGood": 
-`1. Handling PR Reviews, giving good feedbacks and communication with other team members.
-2. Helping peers on queries, pairing with them.
-3. Scaling up good in terms of Tech lead role; e.g taking care of tasks, assigning to relevant members, proper follow up and helping them with solutions`,
-            "needImprovement": 
-`1. Identyfing Global Impact based on changes and validate/share necessary info with Team members/QA.
-2. Delegating task to team members, helping them to scale.
-3. Plan and Complete certifications.
-4. Complete Key Results for all the Objectives within the quarter.`,
+           "goingGood":[
+              {
+                "id": 1,
+                "feedback": "Sherin Koolinga Handling PR Reviews, giving good feedbacks and communication with other team members."
+              },
+              {
+                "id": 2,
+                "feedback": "Helping peers on queries, pairing with them."
+              },
+              {
+                "id": 3,
+                "feedback": "Scaling up good in terms of Tech lead role; e.g taking care of tasks, assigning to relevant members, proper follow up and helping them with solutions"
+              }
+            ] ,
+            "needImprovement": [
+              {
+                "id": 1,
+                "feedback": "Sherin Koolinga Identyfing Global Impact based on changes and validate/share necessary info with Team members/QA."
+              },
+              {
+                "id": 2,
+                "feedback": "Delegating task to team members, helping them to scale."
+              },
+              {
+                "id": 3,
+                "feedback": "Plan and Complete certifications."
+              },
+              {
+                "id": 4,
+                "feedback": "Complete Key Results for all the Objectives within the quarter."
+              }
+            ]
           }
         }
       ],
@@ -66,18 +112,39 @@ export const IkigaiIndividualDataResponse = {
           "empDesignation": "Technical Architect I",
           "empOneToOneStatus": "C",
           "ikigaiData":{
-            "goingGood": 
-`1. Vinay Devanna Handling PR Reviews, giving good feedbacks and communication with other team members.
-2. Helping peers on queries, pairing with them.
-3. Scaling up good in terms of Tech lead role; e.g taking care of tasks, assigning to relevant members, proper follow up and helping them with solutions`,
-            "needImprovement": 
-`1. Vinay devanna Identyfing Global Impact based on changes and validate/share necessary info with Team members/QA.
-2. Delegating task to team members, helping them to scale.
-3. Plan and Complete certifications.
-4. Complete Key Results for all the Objectives within the quarter.`,
-          },
-
-       
+           "goingGood":[
+              {
+                "id": 1,
+                "feedback": "Vinay Devanna Handling PR Reviews, giving good feedbacks and communication with other team members."
+              },
+              {
+                "id": 2,
+                "feedback": "Helping peers on queries, pairing with them."
+              },
+              {
+                "id": 3,
+                "feedback": "Scaling up good in terms of Tech lead role; e.g taking care of tasks, assigning to relevant members, proper follow up and helping them with solutions"
+              }
+            ] ,
+            "needImprovement": [
+              {
+                "id": 1,
+                "feedback": "Vinay Devanna Identyfing Global Impact based on changes and validate/share necessary info with Team members/QA."
+              },
+              {
+                "id": 2,
+                "feedback": "Delegating task to team members, helping them to scale."
+              },
+              {
+                "id": 3,
+                "feedback": "Plan and Complete certifications."
+              },
+              {
+                "id": 4,
+                "feedback": "Complete Key Results for all the Objectives within the quarter."
+              }
+            ]
+          },       
         },
         {
           "empID": "PRO1090",
@@ -86,15 +153,38 @@ export const IkigaiIndividualDataResponse = {
           "empDesignation": "Scrum Master",
           "empOneToOneStatus": "P",
           "ikigaiData":{
-            "goingGood": 
-`1. Sritaj Patel Handling PR Reviews, giving good feedbacks and communication with other team members.
-2. Helping peers on queries, pairing with them.
-3. Scaling up good in terms of Tech lead role; e.g taking care of tasks, assigning to relevant members, proper follow up and helping them with solutions`,
-            "needImprovement": 
-`1. Identyfing Global Impact based on changes and validate/share necessary info with Team members/QA.
-2. Delegating task to team members, helping them to scale.
-3. Plan and Complete certifications.
-4. Complete Key Results for all the Objectives within the quarter.`,
+           "goingGood":[
+              {
+                "id": 1,
+                "feedback": "Sritaj Patel Handling PR Reviews, giving good feedbacks and communication with other team members."
+              },
+              {
+                "id": 2,
+                "feedback": "Helping peers on queries, pairing with them."
+              },
+              {
+                "id": 3,
+                "feedback": "Scaling up good in terms of Tech lead role; e.g taking care of tasks, assigning to relevant members, proper follow up and helping them with solutions"
+              }
+            ] ,
+            "needImprovement": [
+              {
+                "id": 1,
+                "feedback": "Sritaj Patel Identyfing Global Impact based on changes and validate/share necessary info with Team members/QA."
+              },
+              {
+                "id": 2,
+                "feedback": "Delegating task to team members, helping them to scale."
+              },
+              {
+                "id": 3,
+                "feedback": "Plan and Complete certifications."
+              },
+              {
+                "id": 4,
+                "feedback": "Complete Key Results for all the Objectives within the quarter."
+              }
+            ]
           }
         },
         {
@@ -104,15 +194,38 @@ export const IkigaiIndividualDataResponse = {
           "empDesignation": " Senior Developer",
           "empOneToOneStatus": "P",
           "ikigaiData":{
-            "goingGood": 
-`1. Utkarsh Krishna Handling PR Reviews, giving good feedbacks and communication with other team members.
-2. Helping peers on queries, pairing with them.
-3. Scaling up good in terms of Tech lead role; e.g taking care of tasks, assigning to relevant members, proper follow up and helping them with solutions`,
-            "needImprovement": 
-`1. Utkarsh Krishna Identyfing Global Impact based on changes and validate/share necessary info with Team members/QA.
-2. Delegating task to team members, helping them to scale.
-3. Plan and Complete certifications.
-4. Complete Key Results for all the Objectives within the quarter.`,
+           "goingGood":[
+              {
+                "id": 1,
+                "feedback": "Utkarsh Krishna Handling PR Reviews, giving good feedbacks and communication with other team members."
+              },
+              {
+                "id": 2,
+                "feedback": "Helping peers on queries, pairing with them."
+              },
+              {
+                "id": 3,
+                "feedback": "Scaling up good in terms of Tech lead role; e.g taking care of tasks, assigning to relevant members, proper follow up and helping them with solutions"
+              }
+            ] ,
+            "needImprovement": [
+              {
+                "id": 1,
+                "feedback": " Utkarsh Krishna Identyfing Global Impact based on changes and validate/share necessary info with Team members/QA."
+              },
+              {
+                "id": 2,
+                "feedback": "Delegating task to team members, helping them to scale."
+              },
+              {
+                "id": 3,
+                "feedback": "Plan and Complete certifications."
+              },
+              {
+                "id": 4,
+                "feedback": "Complete Key Results for all the Objectives within the quarter."
+              }
+            ]
           }
         },
         {
@@ -122,15 +235,38 @@ export const IkigaiIndividualDataResponse = {
           "empDesignation": "Technical Architect II",
           "empOneToOneStatus": "P",
           "ikigaiData":{
-            "goingGood": 
-`1. Prasad Pande Handling PR Reviews, giving good feedbacks and communication with other team members.
-2. Helping peers on queries, pairing with them.
-3. Scaling up good in terms of Tech lead role; e.g taking care of tasks, assigning to relevant members, proper follow up and helping them with solutions`,
-            "needImprovement": 
-`1. Prasad Pande Identyfing Global Impact based on changes and validate/share necessary info with Team members/QA.
-2. Delegating task to team members, helping them to scale.
-3. Plan and Complete certifications.
-4. Complete Key Results for all the Objectives within the quarter.`,
+            "goingGood":[
+              {
+                "id": 1,
+                "feedback": "Prasad Pramod Handling PR Reviews, giving good feedbacks and communication with other team members."
+              },
+              {
+                "id": 2,
+                "feedback": "Helping peers on queries, pairing with them."
+              },
+              {
+                "id": 3,
+                "feedback": "Scaling up good in terms of Tech lead role; e.g taking care of tasks, assigning to relevant members, proper follow up and helping them with solutions"
+              }
+            ] ,
+            "needImprovement": [
+              {
+                "id": 1,
+                "feedback": "Prasad Pramod Identyfing Global Impact based on changes and validate/share necessary info with Team members/QA."
+              },
+              {
+                "id": 2,
+                "feedback": "Delegating task to team members, helping them to scale."
+              },
+              {
+                "id": 3,
+                "feedback": "Plan and Complete certifications."
+              },
+              {
+                "id": 4,
+                "feedback": "Complete Key Results for all the Objectives within the quarter."
+              }
+            ]
           }
         },
         {
@@ -140,15 +276,38 @@ export const IkigaiIndividualDataResponse = {
           "empDesignation": "",
           "empOneToOneStatus": "P",
           "ikigaiData":{
-            "goingGood": 
-`1. Anand Gothe Handling PR Reviews, giving good feedbacks and communication with other team members.
-2. Helping peers on queries, pairing with them.
-3. Scaling up good in terms of Tech lead role; e.g taking care of tasks, assigning to relevant members, proper follow up and helping them with solutions`,
-            "needImprovement": 
-`1. Anand Gothe Identyfing Global Impact based on changes and validate/share necessary info with Team members/QA.
-2. Delegating task to team members, helping them to scale.
-3. Plan and Complete certifications.
-4. Complete Key Results for all the Objectives within the quarter.`,
+           "goingGood":[
+              {
+                "id": 1,
+                "feedback": "Anand Gothe Handling PR Reviews, giving good feedbacks and communication with other team members."
+              },
+              {
+                "id": 2,
+                "feedback": "Helping peers on queries, pairing with them."
+              },
+              {
+                "id": 3,
+                "feedback": "Scaling up good in terms of Tech lead role; e.g taking care of tasks, assigning to relevant members, proper follow up and helping them with solutions"
+              }
+            ] ,
+            "needImprovement": [
+              {
+                "id": 1,
+                "feedback": "Anand Gothe Identyfing Global Impact based on changes and validate/share necessary info with Team members/QA."
+              },
+              {
+                "id": 2,
+                "feedback": "Delegating task to team members, helping them to scale."
+              },
+              {
+                "id": 3,
+                "feedback": "Plan and Complete certifications."
+              },
+              {
+                "id": 4,
+                "feedback": "Complete Key Results for all the Objectives within the quarter."
+              }
+            ]
           }
         }
       ],
@@ -171,15 +330,38 @@ export const IkigaiIndividualDataResponse = {
           "empDesignation": " Senior Developer",
           "empOneToOneStatus": "P",
           "ikigaiData":{
-            "goingGood": 
-`1. Handling PR Reviews, giving good feedbacks and communication with other team members.
-2. Helping peers on queries, pairing with them.
-3. Scaling up good in terms of Tech lead role; e.g taking care of tasks, assigning to relevant members, proper follow up and helping them with solutions`,
-            "needImprovement": 
-`1. Identyfing Global Impact based on changes and validate/share necessary info with Team members/QA.
-2. Delegating task to team members, helping them to scale.
-3. Plan and Complete certifications.
-4. Complete Key Results for all the Objectives within the quarter.`,
+            "goingGood":[
+              {
+                "id": 1,
+                "feedback": "Test t Handling PR Reviews, giving good feedbacks and communication with other team members."
+              },
+              {
+                "id": 2,
+                "feedback": "Helping peers on queries, pairing with them."
+              },
+              {
+                "id": 3,
+                "feedback": "Scaling up good in terms of Tech lead role; e.g taking care of tasks, assigning to relevant members, proper follow up and helping them with solutions"
+              }
+            ] ,
+            "needImprovement": [
+              {
+                "id": 1,
+                "feedback": "Test t Identyfing Global Impact based on changes and validate/share necessary info with Team members/QA."
+              },
+              {
+                "id": 2,
+                "feedback": "Delegating task to team members, helping them to scale."
+              },
+              {
+                "id": 3,
+                "feedback": "Plan and Complete certifications."
+              },
+              {
+                "id": 4,
+                "feedback": "Complete Key Results for all the Objectives within the quarter."
+              }
+            ]
           }
         },
         {
@@ -189,15 +371,38 @@ export const IkigaiIndividualDataResponse = {
           "empDesignation": "Technical Architect III",
           "empOneToOneStatus": "P",
           "ikigaiData":{
-            "goingGood": 
-`1. Handling PR Reviews, giving good feedbacks and communication with other team members.
-2. Helping peers on queries, pairing with them.
-3. Scaling up good in terms of Tech lead role; e.g taking care of tasks, assigning to relevant members, proper follow up and helping them with solutions`,
-            "needImprovement": 
-`1. Identyfing Global Impact based on changes and validate/share necessary info with Team members/QA.
-2. Delegating task to team members, helping them to scale.
-3. Plan and Complete certifications.
-4. Complete Key Results for all the Objectives within the quarter.`,
+            "goingGood":[
+              {
+                "id": 1,
+                "feedback": "Prasad Pande Handling PR Reviews, giving good feedbacks and communication with other team members."
+              },
+              {
+                "id": 2,
+                "feedback": "Helping peers on queries, pairing with them."
+              },
+              {
+                "id": 3,
+                "feedback": "Scaling up good in terms of Tech lead role; e.g taking care of tasks, assigning to relevant members, proper follow up and helping them with solutions"
+              }
+            ] ,
+            "needImprovement": [
+              {
+                "id": 1,
+                "feedback": "Prasad Pande Identyfing Global Impact based on changes and validate/share necessary info with Team members/QA."
+              },
+              {
+                "id": 2,
+                "feedback": "Delegating task to team members, helping them to scale."
+              },
+              {
+                "id": 3,
+                "feedback": "Plan and Complete certifications."
+              },
+              {
+                "id": 4,
+                "feedback": "Complete Key Results for all the Objectives within the quarter."
+              }
+            ]
           }
         }
       ],

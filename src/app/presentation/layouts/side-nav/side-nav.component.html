@@ -28,7 +28,7 @@
             <mat-expansion-panel-header>
               <mat-panel-title>{{teams.teamName}}</mat-panel-title>
             </mat-expansion-panel-header>
-            <a *ngFor="let team of teams.subMenus" class="sideNavSection__subMenu connect__links" [routerLink]="['/', team.navigationPath]" routerLinkActive="active" id={{teams.teamID}}>{{team.subMenuName}}</a>
+            <a *ngFor="let team of teams.subMenus" class="sideNavSection__subMenu connect__links" (click)="navRouterFunction(teams.teamID)" routerLinkActive="active" id={{teams.teamID}}>{{team.subMenuName}}</a>
           </mat-expansion-panel>
         </mat-accordion>
     </mat-expansion-panel>

@@ -20,6 +20,8 @@ import { getNavigationTeamLinksAPIService } from '../../../domain/use-cases/navi
 export class SideNavComponent implements OnInit {
   sideNavMenus: NavMenuResponse = {} as NavMenuResponse;
   sidenavTeamsLinks:NavTeamResponse = {} as NavTeamResponse;
+  teamID:string = '';
+
   constructor(
     private router:Router,
     private getAPIService:getAPIService,
@@ -39,6 +41,13 @@ export class SideNavComponent implements OnInit {
     console.log('Logging out');
     localStorage.removeItem('isLoggedIn');
     this.router.navigate(['/login']);
+  }
+
+  navRouterFunction = (teamID:string) => {
+    this.teamID = teamID.toLowerCase();
+    this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
+      this.router.navigate(['IKIGAI', this.teamID]);
+    });
   }
 
 }

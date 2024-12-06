@@ -1,6 +1,12 @@
+export interface ikigaiIndividualFeedback{
+  id:number;
+  feedback: string;
+}
+
+
 export interface ikigaiIndividualFeedbackResponse{
-  goingGood: string;
-  needImprovement: string;
+  goingGood: ikigaiIndividualFeedback[];
+  needImprovement: ikigaiIndividualFeedback[];
 }
 
 export interface ikigaiIndividualTeamMembersResponse{
@@ -9,6 +15,7 @@ export interface ikigaiIndividualTeamMembersResponse{
   empPicture: string;
   empDesignation: string;
   empOneToOneStatus: string;
+  ikigaiData: ikigaiIndividualFeedbackResponse;
 }
 
 export interface ikigaiIndividualTeamsResponse{

@@ -27,7 +27,7 @@
       <button class="right--section secondary">Sept</button>
     </section>
     <section class="section__card__container">
-      <section class="card card__1">
+      <!-- <section class="card card__1">
        <p class="card__section title">Kalopsia[Exact]</p>
        <p class="card__section role">SM: Sritaj</p>
        <section class="card__section"></section>
@@ -126,7 +126,7 @@
           <img class="avatar" src="assets/Avatars/M/Gemini_Generated_Image_mo6jucmo6jucmo6j.jpeg" alt="Male">
           <img class="avatar" src="assets/Avatars/F/Gemini_Generated_Image_juzxejjuzxejjuzx.jpeg" alt="Female">
         </section>
-      </section>
+      </section> -->
       <section class="card" *ngFor="let teams of homepageData.teams">
         <p class="card__section title">{{teams.teamName}}</p>
         <p class="card__section role">SM: {{teams.teamSMName}}</p>
@@ -139,16 +139,28 @@
         }
         @if(teams.totalOnetoOneCompletedCount==teams.totalTeamMembersCount) {
 
-          <h6 class="card__section 1:1Connect success">1:1 Connect: {{teams.totalOnetoOneCompletedCount}}/{{teams.totalTeamMembersCount}}</h6>
+          <h6 class="card__section 1:1Connect">1:1 Connect: <span class="success">{{teams.totalOnetoOneCompletedCount}}/{{teams.totalTeamMembersCount}}</span></h6>
         }
         @else {
 
           <h6 class="card__section 1:1Connect">1:1 Connect: {{teams.totalOnetoOneCompletedCount}}/{{teams.totalTeamMembersCount}}</h6>
         }
-
-        <!-- <h6 class="card__section ikigai">IKIGAI: {{teams.ikigai}}</h6>
-        <h6 class="card__section 1:1Connect">1:1 Connect: {{teams.oneOnOneConnect}}</h6> -->
+        <section class="card__section avatar__container collapse">
+          <img class="avatar" src="assets/Avatars/M/Gemini_Generated_Image_mo6jucmo6jucmo6j.jpeg" alt="Male">
+          <img class="avatar" src="assets/Avatars/F/Gemini_Generated_Image_juzxejjuzxejjuzx.jpeg" alt="Female">
+          <img class="avatar" src="assets/Avatars/M/Gemini_Generated_Image_mo6jucmo6jucmo6j.jpeg" alt="Male">
+          <img class="avatar" src="assets/Avatars/F/Gemini_Generated_Image_juzxejjuzxejjuzx.jpeg" alt="Female">
+          <img class="avatar" src="assets/Avatars/M/Gemini_Generated_Image_mo6jucmo6jucmo6j.jpeg" alt="Male">
+          <img class="avatar" src="assets/Avatars/F/Gemini_Generated_Image_juzxejjuzxejjuzx.jpeg" alt="Female">
+          <img class="avatar" src="assets/Avatars/M/Gemini_Generated_Image_mo6jucmo6jucmo6j.jpeg" alt="Male">
+          <img class="avatar" src="assets/Avatars/F/Gemini_Generated_Image_juzxejjuzxejjuzx.jpeg" alt="Female">
+          <img class="avatar" src="assets/Avatars/M/Gemini_Generated_Image_mo6jucmo6jucmo6j.jpeg" alt="Male">
+         </section>
       </section>
     </section>
   </section>
 </section>
+
+@if(this.loader){
+  <app-loader></app-loader>
+}

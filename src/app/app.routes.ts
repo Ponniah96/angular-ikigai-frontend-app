@@ -18,7 +18,7 @@ export const routes: Routes = [
   {path:'OOCustomize', component:WorkinProgreessComponent, canActivate: [authGuard]},
   {path:'IGSchedule', component:WorkinProgreessComponent, canActivate: [authGuard]},
   {path:'IKIGAI', component:IkigaiHomepageComponent, canActivate: [authGuard]},
-  {path:'IKIGAI-Teams', component:IkigaiTeamsComponent, canActivate: [authGuard]},
+  {path:'IKIGAI/:id', component:IkigaiTeamsComponent, canActivate: [authGuard]},
   {path:'IGCustomize', component:WorkinProgreessComponent,  canActivate: [authGuard]},
   {path:'OOSchedule', component:WorkinProgreessComponent, canActivate: [authGuard]},
   {path:'OneToOne', component:WorkinProgreessComponent, canActivate: [authGuard]},
