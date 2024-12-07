@@ -49,108 +49,121 @@
       </section>
     </ng-container>
   </section>
-  <section class="section__ikigai">
-    <section class="section__card">
-      <!--Card Header-->
-      <section class="section__card__header">
-        <mat-icon [ngClass]="goingGoodDisabled?'left--section disabled':'left--section warning'">info</mat-icon>
-        <h6 [ngClass]="goingGoodDisabled?'middle--section disabled':'middle--section'">What's Going Good?</h6>
-        <mat-icon [ngClass]="goingGoodDisabled?'right--section disabled':'right--section success'" (click)="handleGoingGood()">edit</mat-icon>
+
+  <mat-tab-group mat-stretch-tabs="true">
+    <mat-tab label="Feedbacks"> 
+      <section class="section__ikigai">
+        <section class="section__card">
+          <!--Card Header-->
+          <section class="section__card__header">
+            <mat-icon [ngClass]="goingGoodDisabled?'left--section disabled':'left--section warning'">info</mat-icon>
+            <h6 [ngClass]="goingGoodDisabled?'middle--section disabled':'middle--section'">What's Going Good?</h6>
+            <mat-icon [ngClass]="goingGoodDisabled?'right--section disabled':'right--section success'" (click)="handleGoingGood()">edit</mat-icon>
+          </section>
+          <!--Card Section-->
+          <section class="section__card__container">
+            <textarea name="" id="going-good" class="card" [disabled]="goingGoodDisabled"></textarea>
+          </section>
+        </section>
+        <section class="section__card ">
+          <!--Card Header-->
+          <section class="section__card__header">
+            <mat-icon [ngClass]="KeyImprovementsDisabled?'left--section disabled':'left--section warning'">info</mat-icon>
+            <h6 [ngClass]="KeyImprovementsDisabled?'middle--section disabled':'middle--section'">Key Improvement Areas</h6>
+            <mat-icon [ngClass]="KeyImprovementsDisabled?'right--section disabled':'right--section success'" (click)="handleKeyImprovements()">edit</mat-icon>
+          </section>
+          <!--Card Section-->
+          <section class="section__card__container">
+            <textarea name="" id="key-improvements" class="card" [disabled]="KeyImprovementsDisabled"></textarea>
+          </section>
+        </section>
       </section>
-      <!--Card Section-->
-      <section class="section__card__container">
-        <textarea name="" id="going-good" class="card" [disabled]="goingGoodDisabled"></textarea>
+    </mat-tab>
+    <mat-tab label="Action Items"> 
+      <section class="section__ikigai">
+        <section class="section__card extend-row smart-">
+          <!--Card Header-->
+          <section class="section__card__header">
+            <mat-icon class="left--section primary disabled">info</mat-icon>
+            <h6 class="middle--section disabled">Action Items</h6>
+            <mat-icon class="right--section primary disabled">edit</mat-icon>
+          </section>
+          <!--Card Section-->
+          <section class="section__card__container">
+              <mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort style="display: none;">
+                <!-- Actions Column -->
+                <ng-container matColumnDef="actions">
+                  <mat-header-cell *matHeaderCellDef> Actions </mat-header-cell>
+                  <mat-cell *matCellDef="let element"> {{ element.actions }} </mat-cell>
+                </ng-container>
+            
+                <!-- Category Column -->
+                <ng-container matColumnDef="category">
+                  <mat-header-cell *matHeaderCellDef> Category </mat-header-cell>
+                  <mat-cell *matCellDef="let element">
+                    <span 
+                    
+                    >
+                      {{ element.category }}
+                    </span>
+                  </mat-cell>
+                </ng-container>
+            
+                <!-- Added On Column -->
+                <ng-container matColumnDef="addedOn">
+                  <mat-header-cell *matHeaderCellDef> Added On </mat-header-cell>
+                  <mat-cell *matCellDef="let element"> {{ element.addedOn }} </mat-cell>
+                </ng-container>
+            
+                <!-- Status Column -->
+                <ng-container matColumnDef="status">
+                  <mat-header-cell *matHeaderCellDef> Status </mat-header-cell>
+                  <mat-cell *matCellDef="let element">
+                    <!-- <mat-chip-list>
+                      <mat-chip>
+                        {{ element.status }}
+                      </mat-chip>
+                    </mat-chip-list> -->
+                  </mat-cell>
+                </ng-container>
+            
+                <!-- Actions Dropdown -->
+                <ng-container matColumnDef="actionsDropdown">
+                  <mat-header-cell *matHeaderCellDef> Actions </mat-header-cell>
+                  <mat-cell *matCellDef="let element">
+                    <mat-select [(value)]="element.actionSelection">
+                      <mat-option *ngFor="let option of actionOptions" [value]="option">
+                        {{ option }}
+                      </mat-option>
+                    </mat-select>
+                  </mat-cell>
+                </ng-container>
+            
+                <!-- Header and Row -->
+                <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+                <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+              </mat-table>
+          </section>
+        </section>
       </section>
-    </section>
-    <section class="section__card ">
-      <!--Card Header-->
-      <section class="section__card__header">
-        <mat-icon [ngClass]="KeyImprovementsDisabled?'left--section disabled':'left--section warning'">info</mat-icon>
-        <h6 [ngClass]="KeyImprovementsDisabled?'middle--section disabled':'middle--section'">Key Improvement Areas</h6>
-        <mat-icon [ngClass]="KeyImprovementsDisabled?'right--section disabled':'right--section success'" (click)="handleKeyImprovements()">edit</mat-icon>
+    </mat-tab>
+    <mat-tab label="AI Response">
+      <section class="section__ikigai">
+        <section class="section__card">
+          <!--Card Header-->
+          <section class="section__card__header">
+            <mat-icon class="left--section primary disabled">info</mat-icon>
+            <h6 class="middle--section disabled">Highlights!! IKIGAI Aug 2024</h6>
+            <mat-icon class="right--section primary disabled">edit</mat-icon>
+          </section>
+          <!--Card Section-->
+          <section class="section__card__container">
+            <!-- <textarea name="" id="" class="card"></textarea> -->
+          </section>
+        </section>       
       </section>
-      <!--Card Section-->
-      <section class="section__card__container">
-        <textarea name="" id="key-improvements" class="card" [disabled]="KeyImprovementsDisabled"></textarea>
-      </section>
-    </section>
-    <section class="section__card">
-      <!--Card Header-->
-      <section class="section__card__header">
-        <mat-icon class="left--section primary disabled">info</mat-icon>
-        <h6 class="middle--section disabled">Highlights!! IKIGAI Aug 2024</h6>
-        <mat-icon class="right--section primary disabled">edit</mat-icon>
-      </section>
-      <!--Card Section-->
-      <section class="section__card__container">
-        <!-- <textarea name="" id="" class="card"></textarea> -->
-      </section>
-    </section>
-    <section class="section__card extend-row smart-">
-      <!--Card Header-->
-      <section class="section__card__header">
-        <mat-icon class="left--section primary disabled">info</mat-icon>
-        <h6 class="middle--section disabled">Action Items</h6>
-        <mat-icon class="right--section primary disabled">edit</mat-icon>
-      </section>
-      <!--Card Section-->
-      <section class="section__card__container">
-          <mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort style="display: none;">
-            <!-- Actions Column -->
-            <ng-container matColumnDef="actions">
-              <mat-header-cell *matHeaderCellDef> Actions </mat-header-cell>
-              <mat-cell *matCellDef="let element"> {{ element.actions }} </mat-cell>
-            </ng-container>
-        
-            <!-- Category Column -->
-            <ng-container matColumnDef="category">
-              <mat-header-cell *matHeaderCellDef> Category </mat-header-cell>
-              <mat-cell *matCellDef="let element">
-                <span 
-                
-                >
-                  {{ element.category }}
-                </span>
-              </mat-cell>
-            </ng-container>
-        
-            <!-- Added On Column -->
-            <ng-container matColumnDef="addedOn">
-              <mat-header-cell *matHeaderCellDef> Added On </mat-header-cell>
-              <mat-cell *matCellDef="let element"> {{ element.addedOn }} </mat-cell>
-            </ng-container>
-        
-            <!-- Status Column -->
-            <ng-container matColumnDef="status">
-              <mat-header-cell *matHeaderCellDef> Status </mat-header-cell>
-              <mat-cell *matCellDef="let element">
-                <!-- <mat-chip-list>
-                  <mat-chip>
-                    {{ element.status }}
-                  </mat-chip>
-                </mat-chip-list> -->
-              </mat-cell>
-            </ng-container>
-        
-            <!-- Actions Dropdown -->
-            <ng-container matColumnDef="actionsDropdown">
-              <mat-header-cell *matHeaderCellDef> Actions </mat-header-cell>
-              <mat-cell *matCellDef="let element">
-                <mat-select [(value)]="element.actionSelection">
-                  <mat-option *ngFor="let option of actionOptions" [value]="option">
-                    {{ option }}
-                  </mat-option>
-                </mat-select>
-              </mat-cell>
-            </ng-container>
-        
-            <!-- Header and Row -->
-            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-            <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
-          </mat-table>
-      </section>
-    </section>
-  </section>
+    </mat-tab>
+  </mat-tab-group>  
 </section>
 
 @if(this.loader){

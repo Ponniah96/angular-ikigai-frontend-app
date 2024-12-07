@@ -24,7 +24,7 @@
             <mat-panel-title class="sideNavSection__mainMenu">Teams</mat-panel-title>
         </mat-expansion-panel-header>
        <mat-accordion *ngFor="let teams of sidenavTeamsLinks.teams; let i = index">
-          <mat-expansion-panel [expanded]="i === 0">
+          <mat-expansion-panel >
             <mat-expansion-panel-header>
               <mat-panel-title>{{teams.teamName}}</mat-panel-title>
             </mat-expansion-panel-header>
