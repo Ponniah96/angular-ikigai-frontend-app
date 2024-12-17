@@ -1,12 +1,22 @@
-export interface ikigaiIndividualFeedback{
+export interface ikigaiIndividualGoingGoodFeedback{
   id:number;
   feedback: string;
 }
 
+export interface ikigaiIndividualImprovementFeedback{
+  id:number;
+  feedback: string;
+  category: string;
+  status: string;
+  addedOn: string;
+}
+
 
 export interface ikigaiIndividualFeedbackResponse{
-  goingGood: ikigaiIndividualFeedback[];
-  needImprovement: ikigaiIndividualFeedback[];
+  goingGood: ikigaiIndividualGoingGoodFeedback[];
+  goingGoodHTML: string;
+  needImprovementsHTML: string;
+  needImprovement: ikigaiIndividualImprovementFeedback[];
 }
 
 export interface ikigaiIndividualTeamMembersResponse{

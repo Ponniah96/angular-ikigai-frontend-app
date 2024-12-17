@@ -18,36 +18,50 @@ export const IkigaiIndividualDataResponse = {
           "empOneToOneStatus": "P",
           "ikigaiData":{
             "goingGood":[
-              {
-                "id": 1,
-                "feedback": "Kumar Ram Handling PR Reviews, giving good feedbacks and communication with other team members."
-              },
-              {
-                "id": 2,
-                "feedback": "Helping peers on queries, pairing with them."
-              },
-              {
-                "id": 3,
-                "feedback": "Scaling up good in terms of Tech lead role; e.g taking care of tasks, assigning to relevant members, proper follow up and helping them with solutions"
-              }
+              // {
+              //   "id": 1,
+              //   "feedback": "Kumar Ram Handling PR Reviews, giving good feedbacks and communication with other team members."
+              // },
+              // {
+              //   "id": 2,
+              //   "feedback": "Helping peers on queries, pairing with them."
+              // },
+              // {
+              //   "id": 3,
+              //   "feedback": "Scaling up good in terms of Tech lead role; e.g taking care of tasks, assigning to relevant members, proper follow up and helping them with solutions"
+              // }
             ] ,
+            "goingGoodHTML":"" ,
+            "needImprovementsHTML":"",
             "needImprovement": [
-              {
-                "id": 1,
-                "feedback": "Kumar Ram Identyfing Global Impact based on changes and validate/share necessary info with Team members/QA."
-              },
-              {
-                "id": 2,
-                "feedback": "Delegating task to team members, helping them to scale."
-              },
-              {
-                "id": 3,
-                "feedback": "Plan and Complete certifications."
-              },
-              {
-                "id": 4,
-                "feedback": "Complete Key Results for all the Objectives within the quarter."
-              }
+              // {
+              //   "id": 1,
+              //   "feedback": "Kumar Ram Identyfing Global Impact based on changes and validate/share necessary info with Team members/QA.",
+              //   "category": "Good to Have",
+              //   "status": "",
+              //   "addedOn": "13-12-24"
+              // },
+              // {
+              //   "id": 2,
+              //   "feedback": "Delegating task to team members, helping them to scale.",
+              //   "category": "",
+              //   "status": "Satisfactory",
+              //   "addedOn": ""
+              // },
+              // {
+              //   "id": 3,
+              //   "feedback": "Plan and Complete certifications.",
+              //   "category": "",
+              //   "status": "",
+              //   "addedOn": ""
+              // },
+              // {
+              //   "id": 4,
+              //   "feedback": "Complete Key Results for all the Objectives within the quarter.",
+              //   "category": "",
+              //   "status": "",
+              //   "addedOn": ""
+              // }
             ]
           }
         },
@@ -71,23 +85,37 @@ export const IkigaiIndividualDataResponse = {
                 "id": 3,
                 "feedback": "Scaling up good in terms of Tech lead role; e.g taking care of tasks, assigning to relevant members, proper follow up and helping them with solutions"
               }
-            ] ,
+            ]  ,
+            "goingGoodHTML":"" ,
+            "needImprovementsHTML":"",
             "needImprovement": [
               {
                 "id": 1,
-                "feedback": "Sherin Koolinga Identyfing Global Impact based on changes and validate/share necessary info with Team members/QA."
+                "feedback": "Sherin Koolinga Identyfing Global Impact based on changes and validate/share necessary info with Team members/QA.",
+                "category": "",
+                "status": "",
+                "addedOn": ""
               },
               {
                 "id": 2,
-                "feedback": "Delegating task to team members, helping them to scale."
+                "feedback": "Delegating task to team members, helping them to scale.",
+                "category": "",
+                "status": "",
+                "addedOn": ""
               },
               {
                 "id": 3,
-                "feedback": "Plan and Complete certifications."
+                "feedback": "Plan and Complete certifications.",
+                "category": "",
+                "status": "",
+                "addedOn": ""
               },
               {
                 "id": 4,
-                "feedback": "Complete Key Results for all the Objectives within the quarter."
+                "feedback": "Complete Key Results for all the Objectives within the quarter.",
+                "category": "",
+                "status": "",
+                "addedOn": ""
               }
             ]
           }
@@ -125,23 +153,37 @@ export const IkigaiIndividualDataResponse = {
                 "id": 3,
                 "feedback": "Scaling up good in terms of Tech lead role; e.g taking care of tasks, assigning to relevant members, proper follow up and helping them with solutions"
               }
-            ] ,
+            ]  ,
+            "goingGoodHTML":"" ,
+            "needImprovementsHTML":"",
             "needImprovement": [
               {
                 "id": 1,
-                "feedback": "Vinay Devanna Identyfing Global Impact based on changes and validate/share necessary info with Team members/QA."
+                "feedback": "Vinay Devanna Identyfing Global Impact based on changes and validate/share necessary info with Team members/QA.",
+                "category": "",
+                "status": "",
+                "addedOn": ""
               },
               {
                 "id": 2,
-                "feedback": "Delegating task to team members, helping them to scale."
+                "feedback": "Delegating task to team members, helping them to scale.",
+                "category": "",
+                "status": "",
+                "addedOn": ""
               },
               {
                 "id": 3,
-                "feedback": "Plan and Complete certifications."
+                "feedback": "Plan and Complete certifications.",
+                "category": "",
+                "status": "",
+                "addedOn": ""
               },
               {
                 "id": 4,
-                "feedback": "Complete Key Results for all the Objectives within the quarter."
+                "feedback": "Complete Key Results for all the Objectives within the quarter.",
+                "category": "",
+                "status": "",
+                "addedOn": ""
               }
             ]
           },       
@@ -167,22 +209,36 @@ export const IkigaiIndividualDataResponse = {
                 "feedback": "Scaling up good in terms of Tech lead role; e.g taking care of tasks, assigning to relevant members, proper follow up and helping them with solutions"
               }
             ] ,
+            "goingGoodHTML":"" ,
+            "needImprovementsHTML":"",
             "needImprovement": [
               {
                 "id": 1,
-                "feedback": "Sritaj Patel Identyfing Global Impact based on changes and validate/share necessary info with Team members/QA."
+                "feedback": "Sritaj Patel Identyfing Global Impact based on changes and validate/share necessary info with Team members/QA.",
+                "category": "",
+                "status": "",
+                "addedOn": ""
               },
               {
                 "id": 2,
-                "feedback": "Delegating task to team members, helping them to scale."
+                "feedback": "Delegating task to team members, helping them to scale.",
+                "category": "",
+                "status": "",
+                "addedOn": ""
               },
               {
                 "id": 3,
-                "feedback": "Plan and Complete certifications."
+                "feedback": "Plan and Complete certifications.",
+                "category": "",
+                "status": "",
+                "addedOn": ""
               },
               {
                 "id": 4,
-                "feedback": "Complete Key Results for all the Objectives within the quarter."
+                "feedback": "Complete Key Results for all the Objectives within the quarter.",
+                "category": "",
+                "status": "",
+                "addedOn": ""
               }
             ]
           }
@@ -207,23 +263,37 @@ export const IkigaiIndividualDataResponse = {
                 "id": 3,
                 "feedback": "Scaling up good in terms of Tech lead role; e.g taking care of tasks, assigning to relevant members, proper follow up and helping them with solutions"
               }
-            ] ,
+            ]  ,
+            "goingGoodHTML":"" ,
+            "needImprovementsHTML":"",
             "needImprovement": [
               {
                 "id": 1,
-                "feedback": " Utkarsh Krishna Identyfing Global Impact based on changes and validate/share necessary info with Team members/QA."
+                "feedback": " Utkarsh Krishna Identyfing Global Impact based on changes and validate/share necessary info with Team members/QA.",
+                "category": "",
+                "status": "",
+                "addedOn": ""
               },
               {
                 "id": 2,
-                "feedback": "Delegating task to team members, helping them to scale."
+                "feedback": "Delegating task to team members, helping them to scale.",
+                "category": "",
+                "status": "",
+                "addedOn": ""
               },
               {
                 "id": 3,
-                "feedback": "Plan and Complete certifications."
+                "feedback": "Plan and Complete certifications.",
+                "category": "",
+                "status": "",
+                "addedOn": ""
               },
               {
                 "id": 4,
-                "feedback": "Complete Key Results for all the Objectives within the quarter."
+                "feedback": "Complete Key Results for all the Objectives within the quarter.",
+                "category": "",
+                "status": "",
+                "addedOn": ""
               }
             ]
           }
@@ -248,23 +318,37 @@ export const IkigaiIndividualDataResponse = {
                 "id": 3,
                 "feedback": "Scaling up good in terms of Tech lead role; e.g taking care of tasks, assigning to relevant members, proper follow up and helping them with solutions"
               }
-            ] ,
+            ]  ,
+            "goingGoodHTML":"" ,
+            "needImprovementsHTML":"",
             "needImprovement": [
               {
                 "id": 1,
-                "feedback": "Prasad Pramod Identyfing Global Impact based on changes and validate/share necessary info with Team members/QA."
+                "feedback": "Prasad Pramod Identyfing Global Impact based on changes and validate/share necessary info with Team members/QA.",
+                "category": "",
+                "status": "",
+                "addedOn": ""
               },
               {
                 "id": 2,
-                "feedback": "Delegating task to team members, helping them to scale."
+                "feedback": "Delegating task to team members, helping them to scale.",
+                "category": "",
+                "status": "",
+                "addedOn": ""
               },
               {
                 "id": 3,
-                "feedback": "Plan and Complete certifications."
+                "feedback": "Plan and Complete certifications.",
+                "category": "",
+                "status": "",
+                "addedOn": ""
               },
               {
                 "id": 4,
-                "feedback": "Complete Key Results for all the Objectives within the quarter."
+                "feedback": "Complete Key Results for all the Objectives within the quarter.",
+                "category": "",
+                "status": "",
+                "addedOn": ""
               }
             ]
           }
@@ -289,23 +373,37 @@ export const IkigaiIndividualDataResponse = {
                 "id": 3,
                 "feedback": "Scaling up good in terms of Tech lead role; e.g taking care of tasks, assigning to relevant members, proper follow up and helping them with solutions"
               }
-            ] ,
+            ]  ,
+            "goingGoodHTML":"" ,
+            "needImprovementsHTML":"",
             "needImprovement": [
               {
                 "id": 1,
-                "feedback": "Anand Gothe Identyfing Global Impact based on changes and validate/share necessary info with Team members/QA."
+                "feedback": "Anand Gothe Identyfing Global Impact based on changes and validate/share necessary info with Team members/QA.",
+                "category": "",
+                "status": "",
+                "addedOn": ""
               },
               {
                 "id": 2,
-                "feedback": "Delegating task to team members, helping them to scale."
+                "feedback": "Delegating task to team members, helping them to scale.",
+                "category": "",
+                "status": "",
+                "addedOn": ""
               },
               {
                 "id": 3,
-                "feedback": "Plan and Complete certifications."
+                "feedback": "Plan and Complete certifications.",
+                "category": "",
+                "status": "",
+                "addedOn": ""
               },
               {
                 "id": 4,
-                "feedback": "Complete Key Results for all the Objectives within the quarter."
+                "feedback": "Complete Key Results for all the Objectives within the quarter.",
+                "category": "",
+                "status": "",
+                "addedOn": ""
               }
             ]
           }
@@ -343,23 +441,37 @@ export const IkigaiIndividualDataResponse = {
                 "id": 3,
                 "feedback": "Scaling up good in terms of Tech lead role; e.g taking care of tasks, assigning to relevant members, proper follow up and helping them with solutions"
               }
-            ] ,
+            ]  ,
+            "goingGoodHTML":"" ,
+            "needImprovementsHTML":"",
             "needImprovement": [
               {
                 "id": 1,
-                "feedback": "Test t Identyfing Global Impact based on changes and validate/share necessary info with Team members/QA."
+                "feedback": "Test t Identyfing Global Impact based on changes and validate/share necessary info with Team members/QA.",
+                "category": "",
+                "status": "",
+                "addedOn": ""
               },
               {
                 "id": 2,
-                "feedback": "Delegating task to team members, helping them to scale."
+                "feedback": "Delegating task to team members, helping them to scale.",
+                "category": "",
+                "status": "",
+                "addedOn": ""
               },
               {
                 "id": 3,
-                "feedback": "Plan and Complete certifications."
+                "feedback": "Plan and Complete certifications.",
+                "category": "",
+                "status": "",
+                "addedOn": ""
               },
               {
                 "id": 4,
-                "feedback": "Complete Key Results for all the Objectives within the quarter."
+                "feedback": "Complete Key Results for all the Objectives within the quarter.",
+                "category": "",
+                "status": "",
+                "addedOn": ""
               }
             ]
           }
@@ -384,23 +496,37 @@ export const IkigaiIndividualDataResponse = {
                 "id": 3,
                 "feedback": "Scaling up good in terms of Tech lead role; e.g taking care of tasks, assigning to relevant members, proper follow up and helping them with solutions"
               }
-            ] ,
+            ]  ,
+            "goingGoodHTML":"" ,
+            "needImprovementsHTML":"",
             "needImprovement": [
               {
                 "id": 1,
-                "feedback": "Prasad Pande Identyfing Global Impact based on changes and validate/share necessary info with Team members/QA."
+                "feedback": "Prasad Pande Identyfing Global Impact based on changes and validate/share necessary info with Team members/QA.",
+                "category": "",
+                "status": "",
+                "addedOn": ""
               },
               {
                 "id": 2,
-                "feedback": "Delegating task to team members, helping them to scale."
+                "feedback": "Delegating task to team members, helping them to scale.",
+                "category": "",
+                "status": "",
+                "addedOn": ""
               },
               {
                 "id": 3,
-                "feedback": "Plan and Complete certifications."
+                "feedback": "Plan and Complete certifications.",
+                "category": "",
+                "status": "",
+                "addedOn": ""
               },
               {
                 "id": 4,
-                "feedback": "Complete Key Results for all the Objectives within the quarter."
+                "feedback": "Complete Key Results for all the Objectives within the quarter.",
+                "category": "",
+                "status": "",
+                "addedOn": ""
               }
             ]
           }

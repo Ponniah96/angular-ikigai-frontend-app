@@ -1,10 +1,8 @@
-import { Component, ViewChild, inject } from '@angular/core';
+import { Component, ViewChild, inject, Inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
-import { MatChipsModule } from '@angular/material/chips';
-import { MatSelect } from '@angular/material/select';
-import { MatOption } from '@angular/material/select';
+import { MatSelectModule } from '@angular/material/select';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatTableModule } from '@angular/material/table';
 import { MatTableDataSource } from '@angular/material/table';
@@ -13,76 +11,68 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSortModule,MatSort, Sort } from '@angular/material/sort';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { FormsModule, ReactiveFormsModule,FormBuilder, FormGroup } from '@angular/forms';
 import { LiveAnnouncer } from '@angular/cdk/a11y';
+import { NgxEditorModule, Validators, Editor, Toolbar } from 'ngx-editor';
 import { LoaderComponent } from '../../../components/loader/loader.component';
+import { SnackbarComponent } from '../../../components/snackbar/snackbar.component';
 import { ikigaiIndividualResponse } from '../../../../core/models/ikigai-individual/ikigaiIndividual.model';
 import { ikigaiIndividualTeamsResponse } from '../../../../core/models/ikigai-individual/ikigaiIndividual.model';
 import { ikigaiIndividualTeamMembersResponse } from '../../../../core/models/ikigai-individual/ikigaiIndividual.model';
+import { ikigaiIndividualImprovementFeedback } from '../../../../core/models/ikigai-individual/ikigaiIndividual.model';
 import { getIkigaiIndividualDataService } from '../../../../domain/use-cases/ikigai-individual/ikigaiIndividual-data.use-case';
-
-export interface PeriodicElement {
-  name: string;
-  positions: number;
-  weight: number;
-  symbol: string;
-}
-
-const ELEMENT_DATA: PeriodicElement[] = [
-  {positions: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H'},
-  {positions: 2, name: 'Helium', weight: 4.0026, symbol: 'He'},
-  {positions: 3, name: 'Lithium', weight: 6.941, symbol: 'Li'},
-  {positions: 4, name: 'Beryllium', weight: 9.0122, symbol: 'Be'},
-  {positions: 5, name: 'Boron', weight: 10.811, symbol: 'B'},
-  {positions: 6, name: 'Carbon', weight: 12.0107, symbol: 'C'},
-  {positions: 7, name: 'Nitrogen', weight: 14.0067, symbol: 'N'},
-  {positions: 8, name: 'Oxygen', weight: 15.9994, symbol: 'O'},
-  {positions: 9, name: 'Fluorine', weight: 18.9984, symbol: 'F'},
-  {positions: 10, name: 'Neon', weight: 20.1797, symbol: 'Ne'},
-];
 
 @Component({
   selector: 'app-ikigai-teams',
   standalone: true,
-  imports: [ MatIconModule, MatChipsModule, MatSelect, MatOption, CommonModule, LoaderComponent, MatTabsModule, MatTableModule, MatPaginatorModule, MatSortModule, MatFormFieldModule, MatInputModule],
+  imports: [ MatIconModule, CommonModule, LoaderComponent, MatTabsModule, MatTableModule, MatPaginatorModule, MatSortModule, MatFormFieldModule, MatInputModule, MatSelectModule, NgxEditorModule, FormsModule,
+    ReactiveFormsModule, SnackbarComponent],
   templateUrl: './ikigai-teams.component.html',
   styleUrl: './ikigai-teams.component.scss'
 })
-export class IkigaiTeamsComponent {
-
-  // displayedColumns: string[] = ['actions', 'category', 'addedOn', 'status', 'actionsDropdown'];
-  // dataSource = [
-  //   { actions: 'Dummy', category: 'Must Have', addedOn: 'Sept, 2024', status: 'New' },
-  //   { actions: 'Dummy', category: 'Must Have', addedOn: 'Aug, 2024', status: 'Good' },
-  //   {
-  //     actions: 'Turning on video cams (external meetings/meetings with stakeholders), joining meeting in time',
-  //     category: 'Good Have',
-  //     addedOn: 'July, 2024',
-  //     status: 'Satisfactory'
-  //   },
-  //   { actions: 'Dummy', category: 'Good Have', addedOn: 'Aug, 2024', status: 'New' },
-  //   { actions: 'Dummy', category: 'Good Have', addedOn: 'July, 2024', status: 'Unsatisfactory' }
-  // ];
-  actionOptions = ['Select', 'Option 1', 'Option 2'];
-
-  private _liveAnnouncer = inject(LiveAnnouncer);
-  displayedColumns: string[] = ['positions', 'name', 'weight', 'symbol'];
-  dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
-  @ViewChild(MatPaginator) paginator!: MatPaginator;
-  @ViewChild(MatSort) sort!: MatSort;
-
+export class IkigaiTeamsComponent {  
   loader:boolean = false;
+  showSnackbar:boolean = false;
+  snackbarMessge!:string;
+  snackbarType!:string;
   userId: string='';
   employeeID: string = '';
-  headerEdit: boolean = false;
   goingGoodDisabled: boolean = true;
+  goingGoodFeedback: string[] = [];
   KeyImprovementsDisabled: boolean = true;
+  improvementsFeedback: string[] = [];
   ikigaiTeamData: ikigaiIndividualResponse = {} as ikigaiIndividualResponse;
   ikigaiIndividualTeams: ikigaiIndividualTeamsResponse = {} as ikigaiIndividualTeamsResponse;
   ikiagiIndividualTeamMembers: ikigaiIndividualTeamMembersResponse = {} as ikigaiIndividualTeamMembersResponse;
-  goingGoodFeedback: string[] = [];
-  improvementsFeedback: string[] = [];
+  ikiagiIndividualTeamMembersFeedback: ikigaiIndividualImprovementFeedback[] = {} as ikigaiIndividualImprovementFeedback[];
 
-  constructor(private getIkigaiIndividualDataService: getIkigaiIndividualDataService,private route: ActivatedRoute) {}
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
+  @ViewChild(MatSort) sort!: MatSort;
+  dataSource = new MatTableDataSource<ikigaiIndividualImprovementFeedback>(this.ikiagiIndividualTeamMembersFeedback);
+  displayedColumns: string[] = ["feedback", "category", "addedOn", "status"];
+  feedbackCategories: string[] = ['Good to Have', 'Must Have', 'Should Have'];
+  feedbackStatus: string[] = ['New', 'Good', 'Satisfactory', 'Unsatisfactory'];
+  selectedFeedbackCategory: string = '';
+  selectedFeedbackStatus: string = '';
+  improvementFeedbacksDisabled:boolean = true;
+
+
+  editor!: Editor;
+  form!: FormGroup;
+  keyImprovementsEditor!: Editor;
+  keyImprovementsForm!: FormGroup;
+  toolbar: Toolbar = [
+    ['bold', 'italic'],
+    ['underline', 'strike'],
+    ['ordered_list', 'bullet_list'],
+    [{ heading: ['h1', 'h2', 'h3', 'h4', 'h5', 'h6'] }],
+    ['text_color', 'background_color'],
+    ['align_left', 'align_center', 'align_right', 'align_justify'],
+    // ['link', 'image'],
+    // ['code', 'blockquote'],
+  ];
+  
+  constructor(private getIkigaiIndividualDataService: getIkigaiIndividualDataService,private route: ActivatedRoute,@Inject(LiveAnnouncer) private _liveAnnouncer: LiveAnnouncer, private fb: FormBuilder) {}
 
   ngOnInit(): void {
     this.userId = this.route.snapshot.paramMap.get('id')!;
@@ -91,26 +81,145 @@ export class IkigaiTeamsComponent {
     this.ikiagiIndividualTeamMembers = this.ikigaiIndividualTeams.teamMembersList[0];
     this.goingGoodFeedback = this.ikiagiIndividualTeamMembers.ikigaiData.goingGood.map((feedback) => feedback.feedback);
     this.improvementsFeedback = this.ikiagiIndividualTeamMembers.ikigaiData.needImprovement.map((feedback) => feedback.feedback);
+    this.ikiagiIndividualTeamMembersFeedback = this.ikiagiIndividualTeamMembers.ikigaiData.needImprovement;
+
+    this.dataSource = new MatTableDataSource<ikigaiIndividualImprovementFeedback>(this.ikiagiIndividualTeamMembersFeedback);
+    this.dataSource.paginator = this.paginator;
+    this.dataSource.sort = this.sort;
 
     this.loader = true;
     setTimeout(() => {
       this.loader = false;
-      document.getElementById("going-good")!.innerHTML = this.goingGoodFeedback.join('\n');
-      document.getElementById("key-improvements")!.innerHTML = this.improvementsFeedback.join('\n');
     }, 3000);
 
-    this.dataSource.paginator = this.paginator;
-    this.dataSource.sort = this.sort;
+    this.editor = new Editor();
+    this.form = this.fb.group({
+      // content: ['<ol><li><p>Kumar Ram Handling PR Reviews, giving good feedbacks and communication with other team members.</p></li><li><p>Helping peers on queries, pairing with them.</p></li><li><p>Scaling up good in terms of Tech lead role; e.g taking care of tasks, assigning to relevant members, proper follow up and helping them with solutions</p></li></ol>'], // Default content
+      content: [this.ikiagiIndividualTeamMembers.ikigaiData.goingGoodHTML], // Default content
+    });
+    this.keyImprovementsEditor = new Editor();
+    this.keyImprovementsForm = this.fb.group({
+      // content: ['<ul><li><p>Kumar Ram Handling PR Reviews, giving good feedbacks and communication with other team members.</p></li><li><p>Helping peers on queries, pairing with them.</p></li><li><p>Scaling up good in terms of Tech lead role; e.g taking care of tasks, assigning to relevant members, proper follow up and helping them with solutions</p></li></ul>'], // Default content
+      content: [this.ikiagiIndividualTeamMembers.ikigaiData.needImprovementsHTML], // Default content
+    });
   }
 
+  showSnackBar = () => {
+    this.showSnackbar = true;
+    this.snackbarMessge = 'Data Saved Successfully!!!';
+    this.snackbarType = 'success';
+  }
+  
+  CloseSnackBar = () => {
+    this.showSnackbar = false;
+  } 
+
   handleGoingGood() {
-    this.headerEdit = !this.headerEdit;
     this.goingGoodDisabled = !this.goingGoodDisabled;
   }
 
   handleKeyImprovements() {
-    this.headerEdit = !this.headerEdit;
     this.KeyImprovementsDisabled = !this.KeyImprovementsDisabled;
+  }
+
+  handleSaveFeedbackChanges() {
+    if(!this.goingGoodDisabled){
+      const content = this.form.value.content;
+      const doc = new DOMParser().parseFromString(content, 'text/html');
+      const arrayFromElements: string[] = [];
+      Array.from(doc.body.children).map((child: Element) => { 
+         if (child.tagName === "UL" || child.tagName === "OL") {
+          const listItems = child.querySelectorAll('li');
+          listItems.forEach((li) => {
+            arrayFromElements.push(li.textContent || "");
+          });
+         }
+         else{
+            arrayFromElements.push(child.textContent || "");
+         }
+      });
+      const cleanArray = arrayFromElements.filter(text => text !== "");
+      this.ikiagiIndividualTeamMembers.ikigaiData.goingGoodHTML = content;
+      cleanArray.forEach((feedback) => {
+        if(this.ikiagiIndividualTeamMembers.ikigaiData.goingGood?.length === 0){
+          this.ikiagiIndividualTeamMembers.ikigaiData.goingGood.push({id: 1, feedback: feedback});
+          return;
+        }
+        else{
+          if(!this.ikiagiIndividualTeamMembers.ikigaiData.goingGood.find((data) => data.feedback === feedback)){
+            this.ikiagiIndividualTeamMembers.ikigaiData.goingGood.push({id: this.ikiagiIndividualTeamMembers.ikigaiData.goingGood.length+1, feedback: feedback});
+          }          
+        }
+      });
+      this.goingGoodDisabled=!this.goingGoodDisabled;
+      this.loader = true;
+      setTimeout(() => {
+        this.loader = false;
+        this.showSnackBar();
+      }, 1000);
+    }
+    else if(!this.KeyImprovementsDisabled){
+      const content = this.keyImprovementsForm.value.content;
+      const doc = new DOMParser().parseFromString(content, 'text/html');
+      const arrayFromElements: string[] = [];
+      Array.from(doc.body.children).map((child: Element) => { 
+         if (child.tagName === "UL" || child.tagName === "OL") {
+          const listItems = child.querySelectorAll('li');
+          listItems.forEach((li) => {
+            arrayFromElements.push(li.textContent || "");
+          });
+         }
+         else{
+            arrayFromElements.push(child.textContent || "");
+         }
+      });
+      const cleanArray = arrayFromElements.filter(text => text !== "");
+      this.ikiagiIndividualTeamMembers.ikigaiData.needImprovementsHTML = content;
+      cleanArray.forEach((feedback) => {
+        if(this.ikiagiIndividualTeamMembers.ikigaiData.needImprovement?.length === 0){
+          this.ikiagiIndividualTeamMembers.ikigaiData.needImprovement.push({id: 1, feedback: feedback, category: '', status: '', addedOn: new Date().toISOString()});
+          return;
+        }
+        else{
+          if(!this.ikiagiIndividualTeamMembers.ikigaiData.needImprovement.find((data) => data.feedback === feedback)){
+            this.ikiagiIndividualTeamMembers.ikigaiData.needImprovement.push({id: 1, feedback: feedback, category: '', status: '', addedOn: new Date().toISOString()});
+          }
+        }
+      });
+      console.log('this.ikiagiIndividualTeamMembers.ikigaiData', this.ikiagiIndividualTeamMembers.ikigaiData);
+      this.dataSource = new MatTableDataSource<ikigaiIndividualImprovementFeedback>(this.ikiagiIndividualTeamMembers.ikigaiData.needImprovement);
+      this.KeyImprovementsDisabled=!this.KeyImprovementsDisabled;
+      this.loader = true;
+      setTimeout(() => {
+        this.loader = false;
+      }, 1000);
+    }
+    else{
+      console.log('No Changes to Save', this.ikiagiIndividualTeamMembers.ikigaiData);
+
+    }
+  }
+
+  handleCancelFeedbacks() {
+    this.goingGoodDisabled = true;
+    this.KeyImprovementsDisabled = true;
+  }
+  
+  handleImprovementsFeedback() {
+    this.improvementFeedbacksDisabled = !this.improvementFeedbacksDisabled;
+  }
+  
+  handleImprovementsFeedbackCancelChanges() {
+    this.improvementFeedbacksDisabled = !this.improvementFeedbacksDisabled;
+  }
+  
+  handleImprovementsFeedbackSaveChanges() {
+    console.log('selectedFeedbackCategory', this.ikiagiIndividualTeamMembersFeedback);
+    this.loader = true;
+    setTimeout(() => {
+      this.loader = false;
+      this.showSnackBar();
+    }, 1000);
   }
 
   getTeamMembersEmployeeID(empID: string) {
@@ -118,12 +227,13 @@ export class IkigaiTeamsComponent {
     this.ikiagiIndividualTeamMembers = this.ikigaiIndividualTeams.teamMembersList.find((emp) => emp.empID.toLowerCase() === this.employeeID.toLowerCase())!;
     this.goingGoodFeedback = this.ikiagiIndividualTeamMembers.ikigaiData.goingGood.map((feedback) => feedback.feedback);
     this.improvementsFeedback = this.ikiagiIndividualTeamMembers.ikigaiData.needImprovement.map((feedback) => feedback.feedback);
-    document.getElementById("going-good")!.innerHTML = this.goingGoodFeedback.join('\n');
-    document.getElementById("key-improvements")!.innerHTML = this.improvementsFeedback.join('\n');
+    this.ikiagiIndividualTeamMembersFeedback = this.ikiagiIndividualTeamMembers.ikigaiData.needImprovement;
+    this.improvementFeedbacksDisabled = !this.improvementFeedbacksDisabled;
     this.loader = true;
     setTimeout(() => {
       this.loader = false;
     }, 1000);
+    this.dataSource = new MatTableDataSource<ikigaiIndividualImprovementFeedback>(this.ikiagiIndividualTeamMembersFeedback);
   }
 
   applyFilter(event: Event){
