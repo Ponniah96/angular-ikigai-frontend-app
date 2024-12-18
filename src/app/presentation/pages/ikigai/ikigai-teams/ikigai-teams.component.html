@@ -25,7 +25,7 @@
             <section class="section__card__header">
               <mat-icon [ngClass]="goingGoodDisabled?'left--section disabled':'left--section warning'">info</mat-icon>
               <h6 [ngClass]="goingGoodDisabled?'middle--section disabled':'middle--section'">What's Going Good?</h6>
-              <mat-icon [ngClass]="goingGoodDisabled?'right--section disabled':'right--section success'" (click)="handleGoingGood()">edit</mat-icon>
+              <mat-icon [ngClass]="goingGoodDisabled?'right--section disabled':'right--section success'" (click)="toggleGoingGood()">edit</mat-icon>
             </section>
             <!--Card Section-->
             <section class="section__card__container">
@@ -40,7 +40,7 @@
             <section class="section__card__header">
               <mat-icon [ngClass]="KeyImprovementsDisabled?'left--section disabled':'left--section warning'">info</mat-icon>
               <h6 [ngClass]="KeyImprovementsDisabled?'middle--section disabled':'middle--section'">Key Improvement Area</h6>
-              <mat-icon [ngClass]="KeyImprovementsDisabled?'right--section disabled':'right--section success'" (click)="handleKeyImprovements()">edit</mat-icon>
+              <mat-icon [ngClass]="KeyImprovementsDisabled?'right--section disabled':'right--section success'" (click)="toggleKeyImprovements()">edit</mat-icon>
             </section>
             <!--Card Section-->
             <section class="section__card__container">
@@ -74,7 +74,7 @@
           <section class="section__card__header">
             <mat-icon [ngClass]="improvementFeedbacksDisabled?'left--section disabled':'left--section warning'">info</mat-icon>
             <h6 [ngClass]="improvementFeedbacksDisabled?'middle--section disabled':'middle--section'">Action Items</h6>
-            <mat-icon [ngClass]="improvementFeedbacksDisabled?'right--section disabled':'right--section success'" (click)="handleImprovementsFeedback()">edit</mat-icon>
+            <mat-icon [ngClass]="improvementFeedbacksDisabled?'right--section disabled':'right--section success'" (click)="toggleImprovementsFeedback()">edit</mat-icon>
           </section>
           <!--Card Section-->
           <section class="section__card__container">
