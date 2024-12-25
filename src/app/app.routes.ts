@@ -10,6 +10,7 @@ import { ArchitechtureGuideComponent } from './presentation/developerGuide/front
 import { LayoutModelsComponent } from './presentation/developerGuide/front-end/layout-models/layout-models.component';
 import { WorkinProgreessComponent } from './presentation/errorPages/workin-progreess/workin-progreess.component';
 import { PageNotFoundComponent } from './presentation/errorPages/page-not-found/page-not-found.component';
+import { CDLMappingComponent } from './presentation/pages/settingsPage/AdminRights/cdlmapping/cdlmapping.component';
 import { AIBasicsComponent } from './presentation/developerGuide/AI/aibasics/aibasics.component';
 import { BackEndBasicsComponent } from './presentation/developerGuide/Backend/back-end-basics/back-end-basics.component';
 
@@ -30,6 +31,7 @@ export const routes: Routes = [
   {path:'page-not-found', component:PageNotFoundComponent,canActivate: [authGuard]},
   {path:'AI-basics', component:WorkinProgreessComponent},
   {path:'back-end-basics', component:WorkinProgreessComponent},
+  {path:'CDLMapping', component:CDLMappingComponent, canActivate: [authGuard]},
   // {path:'AI-basics', component:AIBasicsComponent},
   // {path:'back-end-basics', component:BackEndBasicsComponent},
   { path: '', redirectTo: 'Dashboard', pathMatch: 'full' }, // Wildcard route for home redirect

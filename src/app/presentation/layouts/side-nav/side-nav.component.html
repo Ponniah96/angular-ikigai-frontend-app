@@ -21,7 +21,7 @@
   <mat-accordion role="navigation">
     <mat-expansion-panel expanded>
         <mat-expansion-panel-header>
-            <mat-panel-title class="sideNavSection__mainMenu">Teams</mat-panel-title>
+            <mat-panel-title class="sideNavSection__subMenu">Teams</mat-panel-title>
         </mat-expansion-panel-header>
        <mat-accordion *ngFor="let teams of sidenavTeamsLinks.teams; let i = index">
           <mat-expansion-panel >
@@ -37,7 +37,7 @@
   <mat-accordion class="flex-child grow">
       <mat-expansion-panel>
           <mat-expansion-panel-header class="margin-bottom">
-              <mat-panel-title class="sideNavSection__mainMenu">Developer Guide</mat-panel-title>
+              <mat-panel-title class="sideNavSection__subMenu">Developer Guide</mat-panel-title>
           </mat-expansion-panel-header>
           <mat-accordion>
             <mat-expansion-panel>
@@ -67,6 +67,22 @@
               </mat-expansion-panel-header>
               <a href="https://github.com/Codename-Pulse/engageiq_be" target="_blank" class="sideNavSection__subMenu">Codebase</a>
               <a [routerLink]="['/back-end-basics']" class="sideNavSection__subMenu">Basics</a>
+            </mat-expansion-panel>
+          </mat-accordion>
+      </mat-expansion-panel>
+  </mat-accordion>
+
+  <mat-accordion class="flex-child grow">
+      <mat-expansion-panel>
+          <mat-expansion-panel-header class="margin-bottom">
+              <mat-panel-title class="sideNavSection__subMenu">Settings</mat-panel-title>
+          </mat-expansion-panel-header>
+          <mat-accordion>
+            <mat-expansion-panel>
+              <mat-expansion-panel-header>
+                <mat-panel-title>Admin Rights</mat-panel-title>
+              </mat-expansion-panel-header>
+              <a [routerLink]="['/CDLMapping']" class="sideNavSection__subMenu">CDL Mappings</a>
             </mat-expansion-panel>
           </mat-accordion>
       </mat-expansion-panel>
