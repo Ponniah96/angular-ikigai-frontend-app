@@ -207,6 +207,10 @@ export class CDLMappingComponent {
     this.showLoader();
     this.showSnackBar(true, 'Changes Reset Successfully', 'success');
     this.dataSources = this.getAdminRightsData.teamMappingData;
+    this.dataSources = this.dataSources.map((data) => ({
+      ...data,
+      filteredOptions: [...this.SMList],
+    }));
     this.showTableData();
   }
 }
