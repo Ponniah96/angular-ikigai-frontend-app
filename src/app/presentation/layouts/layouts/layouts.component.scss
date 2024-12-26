@@ -26,6 +26,8 @@
     background: linear-gradient(to bottom,$color-red-dark 0,$color-red-dark 50%,$color-gray-light 50%,$color-gray-light 100%);
     background: radial-gradient(circle at center, #1b1c2a, #2e1e4e, #161623, #090a0f);
     // background: radial-gradient(circle at 50% 50%, #2d2f49, #1b1c2a 40%, #0f1121 80%);
+    // background: #dadfe1;
+    background: #F2F6F9;
   }
   &__sideNavBar{
     padding-top: $spacing * 2.25;

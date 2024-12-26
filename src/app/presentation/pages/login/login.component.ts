@@ -6,16 +6,17 @@ import { SnackbarComponent } from '../../components/snackbar/snackbar.component'
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [ LoaderComponent, SnackbarComponent ],
+  imports: [LoaderComponent, SnackbarComponent],
   templateUrl: './login.component.html',
-  styleUrl: './login.component.scss'
+  styleUrl: './login.component.scss',
 })
 export class LoginComponent {
-  loader:boolean = false;
-  showSnackbar:boolean = false;
-  snackbarMessge!:string;
-  snackbarType!:string;
-  constructor(private router:Router){}
+  loader: boolean = false;
+  showSnackbar: boolean = false;
+  snackbarMessge!: string;
+  snackbarType!: string;
+  currentYear: number = new Date().getFullYear();
+  constructor(private router: Router) {}
   loginFunction = () => {
     console.log('Logging in');
     localStorage.setItem('isLoggedIn', 'true');
@@ -26,9 +27,9 @@ export class LoginComponent {
       this.snackbarMessge = 'Login Successful!!! Redirect to Dashboard';
       this.snackbarType = 'success';
     }, 3000);
-  } 
+  };
   CloseSnackBar = () => {
     this.showSnackbar = false;
     this.router.navigate(['Dashboard']);
-  } 
+  };
 }
