@@ -1,14 +1,69 @@
 <nav>
-  <figure class="sideNavHeaderSection">
+
+  <section class="sideNavSection">
+    <h6 class="sideNavSection__header">MENU</h6>
+    <a class="sideNavSection__mainMenu" routerLink="Dashboard" routerLinkActive="active">
+      <img src="../../../../assets/main-images/loaderIcon.svg" alt="Loader Icon">
+      <h6>Dashboard</h6>
+    </a>
+    <section class="sideNavSection__subMenu__header">
+      <img src="../../../../assets/main-images/loaderIcon.svg" alt="Loader Icon">
+      <h6>Ikigai</h6>
+    </section>
+    <a routerLink="IGSchedule" class="sideNavSection__subMenu" routerLinkActive="active">Schdeule</a>
+    <a routerLink="IKIGAI" class="sideNavSection__subMenu" routerLinkActive="active">Start</a>
+    <a routerLink="OneToOne" class="sideNavSection__subMenu" routerLinkActive="active">Trends</a>
+    <a routerLink="OneToOne" class="sideNavSection__subMenu" routerLinkActive="active">Timeline</a>
+    <section class="sideNavSection__subMenu__header">
+      <img src="../../../../assets/main-images/loaderIcon.svg" alt="Loader Icon">
+      <h6>1:1 Connect</h6>
+    </section>
+    <a routerLink="OOSchedule" class="sideNavSection__subMenu" routerLinkActive="active">Schdeule</a>
+    <a routerLink="OOCustomize" class="sideNavSection__subMenu" routerLinkActive="active">Start</a>
+    <a routerLink="OneToOne" class="sideNavSection__subMenu" routerLinkActive="active">Trends</a>
+    <a routerLink="OneToOne" class="sideNavSection__subMenu" routerLinkActive="active">Timeline</a>
+  </section>  
+
+  <section class="sideNavSection">
+    <h6 class="sideNavSection__header">SETTINGS</h6>
+    <section class="sideNavSection__subMenu__header">
+      <img src="../../../../assets/main-images/loaderIcon.svg" alt="Loader Icon">
+      <h6>Admin Rights</h6>
+    </section>
+    <a routerLink="CDLMapping" class="sideNavSection__subMenu" >CDL Mapping</a>
+    <a routerLink="" class="sideNavSection__subMenu" >Ikigai Setting</a>
+    <a routerLink="" class="sideNavSection__subMenu" >1:1 Connect Setting</a>
+  </section>
+
+  <section class="sideNavSection">
+    <h6 class="sideNavSection__header">DOCUMENTATION</h6>
+    <section class="sideNavSection__subMenu__header">
+      <img src="/assets/main-images/loaderIcon.svg" alt="Loader Icon">
+      <h6>Dev Documentation</h6>
+    </section>
+    <a routerLink="style-guide" class="sideNavSection__subMenu" >Guidelines</a>
+    <a routerLink="architechture-guide" class="sideNavSection__subMenu" >Coding Standards</a>
+    <a routerLink="layout-models" class="sideNavSection__subMenu" >Examples</a>
+  </section>
+
+  <section class="sideNavSection footer flex-child grow">
+    <a class="sideNavSection__mainMenu" routerLink="login" (click)="logoutFunction()">
+      <img src="../../../../assets/main-images/LogoutIcon.svg" alt="Loader Icon">
+      <h6>Logout</h6>
+    </a>
+    <span class="sideNavSection__appVersion">App Version 1.0</span>
+  </section>
+
+  <!-- <figure class="sideNavHeaderSection">
     <img src="assets/Avatars/F/Gemini_Generated_Image_7sa0nr7sa0nr7sa0.jpeg" alt="Person Image" class="sideNavHeaderSection__image">
     <figcaption class="sideNavHeaderSection__description">
       <p class="sideNavHeaderSection__description__name"><strong>Priyadharshini</strong> </p>
       <p class="sideNavHeaderSection__description__role">Client Delivery Lead</p>
       <span class="sideNavHeaderSection__description__logDetails">Last Logged In: <time datetime="2024-10-17">17-10-2024</time></span>
     </figcaption>
-  </figure>
+  </figure> -->
 
-  <section class="sideNavSection" *ngFor="let menu of sideNavMenus.menuList">
+  <!-- <section class="sideNavSection" *ngFor="let menu of sideNavMenus.menuList">
       <a *ngIf="menu.navigationPath" [routerLink]="['/', menu.navigationPath]" routerLinkActive="active" role="navigation" class="sideNavSection__mainMenu text-shadow">{{ menu.menuName }}</a>
       <h3 *ngIf="!menu.navigationPath" class="sideNavSection__mainMenu">{{ menu.menuName }}</h3>
       <ul>
@@ -16,9 +71,16 @@
           <a *ngIf="subMenu.navigationPath" [routerLink]="['/', subMenu.navigationPath]" routerLinkActive="active" class="sideNavSection__subMenu">{{ subMenu.subMenuName }}</a>
           </li>
       </ul>
-  </section>
+  </section> -->
 
-  <mat-accordion role="navigation">
+
+  <!-- <section class="sideNavFooterSection">
+    <img class="sideNavFooterSection__logoImage" src="assets/main-images/DevonLogo.png" alt="Devon logo">
+    <a class="sideNavFooterSection__description__logout" routerLink="login" (click)="logoutFunction()">Logout</a>
+    <span class="sideNavFooterSection__description__version">App Version:1.0</span>
+  </section> -->
+
+  <!-- <mat-accordion role="navigation">
     <mat-expansion-panel>
         <mat-expansion-panel-header>
             <mat-panel-title class="sideNavSection__subMenu">Teams</mat-panel-title>
@@ -86,11 +148,6 @@
             </mat-expansion-panel>
           </mat-accordion>
       </mat-expansion-panel>
-  </mat-accordion>
+  </mat-accordion> -->
 
-  <section class="sideNavFooterSection">
-    <img class="sideNavFooterSection__logoImage" src="assets/main-images/DevonLogo.png" alt="Devon logo">
-    <a class="sideNavFooterSection__description__logout" routerLink="login" (click)="logoutFunction()">Logout</a>
-    <span class="sideNavFooterSection__description__version">App Version:1.0</span>
-  </section>
 </nav>
