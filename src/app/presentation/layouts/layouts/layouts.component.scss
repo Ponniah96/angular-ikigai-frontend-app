@@ -45,7 +45,8 @@
     height: calc(100vh - 100px);
     overflow: auto;    
     border-right: $border-component;
-    background-color: #F9FAFB;
+    // background-color: #F9FAFB;
+    background-color: white;
     @media(min-width: 1500px){
     }
   }
