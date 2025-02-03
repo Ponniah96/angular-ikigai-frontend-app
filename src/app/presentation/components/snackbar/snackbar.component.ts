@@ -6,14 +6,15 @@ import { MatIconModule } from '@angular/material/icon';
   standalone: true,
   imports: [MatIconModule],
   templateUrl: './snackbar.component.html',
-  styleUrl: './snackbar.component.scss'
+  styleUrl: './snackbar.component.scss',
 })
 export class SnackbarComponent {
   @Input() SnackBarMessage!: string;
   @Input() SnackBarType!: string;
   @Output() closeSnackBar = new EventEmitter();
   ngOnInit() {
-    const snackbarComponent = document.getElementsByClassName('snackbar-component')[0];
+    const snackbarComponent =
+      document.getElementsByClassName('snackbar-component')[0];
     const snackbar = document.getElementById('snackbar');
     snackbarComponent?.classList.add('showSnackBar');
     snackbar?.classList.add('show');
@@ -23,7 +24,7 @@ export class SnackbarComponent {
         snackbarComponent?.classList.remove('showSnackBar');
         this.closeSnackBar.emit();
       }
-    }, 3000);
+    }, 25000);
     if (this.SnackBarType === 'error') {
       snackbar?.classList.add('error-message');
     } else {
@@ -32,13 +33,11 @@ export class SnackbarComponent {
   }
 
   closeSnackbar = () => {
-    const snackbarComponent = document.getElementsByClassName('snackbar-component')[0];
+    const snackbarComponent =
+      document.getElementsByClassName('snackbar-component')[0];
     const snackbar = document.getElementById('snackbar');
     snackbar?.classList.remove('show');
     snackbarComponent?.classList.remove('showSnackBar');
     this.closeSnackBar.emit();
-  }
-
+  };
 }
-
-

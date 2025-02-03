@@ -18,7 +18,9 @@
   }
   .snackbar-section{
     @extend .flex-container;
-    justify-content: flex-end;
+    height: 100%;
+    align-items: flex-end;
+    justify-content: center;
     .snackbar-content{
       @extend .flex-container;
       padding: $spacing;

@@ -6,18 +6,19 @@
 
 .ikigai-teams{
   .section__members{
-    @extend .flex-container,.wrap,.center;
-    margin: $spacing;
-    &__description{
-      @extend .flex-container,.center, .column;
-      gap: 0;
-      border: $border-component;
-      padding: $spacing*0.25 $spacing 0 $spacing;
-      min-width: 100px;
-      background-color: #c3e9cc;
-      border: 1px solid #28a745;
-      border-radius: 4px;
+    @extend .flex-container,.wrap,.space-between;
+    margin: $spacing $spacing*3;
+    align-items: center;
+    &__employeeDetailsContainer{
+      @extend .flex-container,.center;
+      gap: $spacing * 0.25;
       cursor: pointer;
+      // border: $border-component;
+      // background-color: #c3e9cc;
+      // border: 1px solid #28a745;
+      // border-radius: 4px;
+      // padding: $spacing*0.25 $spacing 0 $spacing;
+      // min-width: 100px;
 
       &.active{
         background-color: #bfe1f3;
@@ -30,11 +31,38 @@
         border-radius: 50%;
       }
     }
+    &__details{
+      @extend .grid-container;
+      @include grid-template-column(100px 1fr);
+      @include grid-template-row(1fr 1fr);
+      @include grid-row-gap(0);
+      @include grid-column-gap(0);
+      align-items: center;
+      .avatar{
+        width: 4.25rem;
+        height: auto;
+        border-radius: 50%;
+        @include grid-row(1,3);
+      }
+      *{
+        padding: 0;
+        margin: 0;
+      }
+      &__empName{
+        align-self: flex-end;
+      }
+    }
+    &__description{
+      font-size: $font-size-subText;
+      font-weight: $font-weight-subText;
+      color: $text-color-light;
+    }
   }
   .section__ikigai{
-    margin: $spacing;
+    // margin: $spacing;
     &__feedbacks{
-      @extend .flex-container,.bg-white;
+      @extend .flex-container;
+      gap: 2rem;
       .card{
         box-shadow: none;
         width: 100%;
@@ -42,30 +70,63 @@
       }
       .section__card{
         width: 50%;
+        margin: $spacing 0;
+        // background-color: $color-gray-lighter;
+        background-color: #f6f6f6;
+        border: 1px solid $color-gray;
+        border-radius: $spacing * 0.25;
+        @extend .bg-white;
         &__header{
-          background-color: $color-gray-lighter;
           color: $color-gray-dark;
+          border: 0;
         }
       }
     }
+    &__action-items{
+      .section__card{
+        border: 1px solid $color-gray;
+        background-color: #f6f6f6;
+      }
+    }
   }  
+  .section__header{
+    @extend.flex-container, .column, .center;
+    *{
+      padding: 0;
+      margin: 0;
+    }
+    span{
+      font-size: $font-size-subText;
+      color: $text-color-light;
+    }
+  }
+  .section__title{
+    font-style: italic;
+    font-weight: $font-weight-subText;
+    color: $text-color-light;
+    margin: 0;
+    padding: 0;
+  }
 }
 
 ::ng-deep.mat-mdc-tab-group{
-  border: 1px solid $color-gray;
+  // border: 1px solid $color-gray;
+  // background-color: $color-white;
   border-radius: 8px;  
-  margin: 16px;
-  background-color: $color-white;
+  margin: $spacing $spacing*3;
   ::ng-deep.mat-mdc-tab-header{
     ::ng-deep.mat-mdc-tab-label-container{
       z-index: 0;
       border: 1px solid $color-gray;
       ::ng-deep.mat-mdc-tab{
+        border-right: 1px solid $color-gray;
+        @extend .bg-white;
         &:first-child{
           border-top-left-radius: $spacing * 0.5;
         }
         &:last-child{
           border-top-right-radius: $spacing * 0.5;
+          border-right: none;
         }
         ::ng-deep.mdc-tab__text-label{
           padding: $spacing;
@@ -146,17 +207,28 @@ table{
 }
 
 .ngx-editor-panel{
-  border: 2px solid rgba(0, 0, 0, 0.2);
+  // border: 2px solid rgba(0, 0, 0, 0.2);
   border-radius: 4px;
+  box-shadow: $box-shadow-default;
+  &:has(.disabled ){
+    background-color: $color-editor-disabled;
+    pointer-events: none;
+    ::ng-deep.NgxEditor__MenuBar{
+      background-color: $color-editor-disabled !important;
+    } 
+    ::ng-deep.NgxEditor{
+      background: $color-editor-disabled !important;
+    }
+  }
 }
 
 ::ng-deep.NgxEditor{
-  margin: $spacing;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-  .disabled &{
-    opacity: 0.5;
-    pointer-events: none;
-  }
+  // margin: $spacing;
+  border: none !important;
+  min-height: 350px;
+  // .disabled &{
+  //   pointer-events: none;
+  // }
   &__Content{
     padding: $spacing $spacing*0.5 !important;
     ul, ol{
