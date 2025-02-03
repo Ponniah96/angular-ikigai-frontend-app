@@ -74,9 +74,6 @@
         }
     }
   }
-  .section__dashboard{
-    @extend.text-shadow
-  }
   .section__header{
     @extend.flex-container, .column, .center;
     *{
@@ -94,5 +91,8 @@
     color: $text-color-light;
     margin: 0;
     padding: 0;
+  }
+  .section__dashboard{
+    @extend.text-shadow
   }
 }

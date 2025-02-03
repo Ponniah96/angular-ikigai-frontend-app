@@ -24,7 +24,7 @@ export class SnackbarComponent {
         snackbarComponent?.classList.remove('showSnackBar');
         this.closeSnackBar.emit();
       }
-    }, 25000);
+    }, 3000);
     if (this.SnackBarType === 'error') {
       snackbar?.classList.add('error-message');
     } else {

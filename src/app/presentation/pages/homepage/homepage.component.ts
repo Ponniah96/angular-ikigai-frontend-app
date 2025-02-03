@@ -6,7 +6,6 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { HomepageDataResponse } from '../../../data/responses/hompage/homepage-data.response';
 import { HomePageResponse } from '../../../core/models/hompage/homepage.model';
 import { getHomePageDataService } from '../../../domain/use-cases/homepage/homepage-data.use-case';
-import { MatTooltip } from '@angular/material/tooltip';
 
 @Component({
   selector: 'app-homepage',
